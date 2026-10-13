@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Neon Pixels · Instagram Launch, all 15 posts</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151719'/%3E%3Cpath d='M14 50V14l32 38V30h6a10 10 0 0 0 0-20H30' fill='none' stroke='%23F1EEE7' stroke-width='4'/%3E%3C/svg%3E">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one editorial column in the client's own palette; posts read top to bottom in publishing order, media first. */
+:root {
+  --bg: #F1EEE7;        /* Paris Ivory */
+  --surface: #E6E1D8;   /* ivory pressed toward Warm Stone */
+  --fg: #151719;        /* Midnight Ink */
+  --muted: #55575A;     /* Graphite, lifted for text */
+  --line: rgba(21,23,25,0.14);
+  --accent: #8C774F;    /* Champagne, deepened for text contrast on ivory */
+  --sage: #6F7F6E;      /* Digital Sage, deepened for text */
+  --ok-bg: rgba(111,127,110,0.16);
+  --wait-bg: rgba(182,160,120,0.22);
+  --display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14);
+    --accent: #C9B48A; --sage: #9EAD9D; --ok-bg: rgba(158,173,157,0.16); --wait-bg: rgba(182,160,120,0.2); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14);
+  --accent: #C9B48A; --sage: #9EAD9D; --ok-bg: rgba(158,173,157,0.16); --wait-bg: rgba(182,160,120,0.2); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; display: flex; flex-direction: column; gap: 72px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; text-wrap: balance; margin: 0; line-height: 0.95; }
+h1 { font-size: clamp(56px, 9vw, 104px); }
+h2 { font-size: clamp(38px, 5.5vw, 56px); }
+h3 { font-size: 34px; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); }
+header { display: flex; flex-direction: column; gap: 22px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--fg); }
+.chip b { font-weight: 600; color: var(--accent); }
+section { display: flex; flex-direction: column; gap: 24px; }
+.section-head { display: flex; flex-direction: column; gap: 10px; }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items: start; }
+figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+figcaption { font-size: 13px; color: var(--muted); }
+figure img, video { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 4px; }
+.grid-img { max-width: 560px; }
+/* posts */
+.post { display: flex; flex-direction: column; gap: 22px; padding-top: 36px; border-top: 1px solid var(--line); }
+.post-head { display: flex; align-items: flex-end; gap: 22px; flex-wrap: wrap; }
+.num { font-family: var(--display); font-size: 92px; line-height: 0.8; color: var(--accent); font-variant-numeric: tabular-nums; }
+.post-title { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; background: var(--surface); color: var(--fg); }
+.tag.pillar { background: var(--sage); color: var(--bg); }
+.strip { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+.strip img { flex: 0 0 auto; width: min(300px, 72vw); height: auto; scroll-snap-align: start; border-radius: 4px; }
+.reel { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 300px); gap: 16px; }
+.reel video, .reel img { width: 100%; }
+.single img { width: min(380px, 100%); }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.note { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.note h4 { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.note ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.note p, .note li { font-size: 15px; }
+details { border: 1px solid var(--line); border-radius: 4px; padding: 12px 16px; }
+summary { cursor: pointer; font-size: 14px; font-weight: 600; }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.fr { white-space: pre-line; font-size: 14px; color: var(--fg); margin-top: 10px; }
+.pending { background: var(--wait-bg); border-radius: 4px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+.pending ol { margin: 0; padding-left: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 28px; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 220px)); gap: 14px; }
+.hl { display: flex; flex-wrap: wrap; gap: 22px; }
+.hl figure { width: 92px; align-items: center; text-align: center; }
+.hl img { border-radius: 50%; width: 84px; height: 84px; outline: 1px solid var(--line); outline-offset: 3px; }
+/* tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+td.time { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.st { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.st.ok { background: var(--ok-bg); color: var(--fg); }
+.st.wait { background: var(--wait-bg); color: var(--fg); }
+.group td { background: var(--surface); font-weight: 600; }
+.src { font-size: 13px; color: var(--muted); }
+.src a { color: var(--accent); }
+@media (max-width: 560px) {
+  .reel { grid-template-columns: 1fr; }
+  .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .num { font-size: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Neon Pixels · Instagram · @neonpixels.fr</div>
+  <h1>Launch grid, posts 01 to 15</h1>
+  <p class="lead">All 15 launch posts of your plan, in French and in your caption format, with every card shown below. At the bottom: the publishing plan and what we need from you to go live and start the ads.</p>
+  <div class="chips">
+    <span class="chip"><b>15</b> posts in your plan's order</span>
+    <span class="chip"><b>5</b> reels · <b>7</b> carousels · <b>3</b> single posts</span>
+    <span class="chip">Every reel ends with the logo and the Neon Pulse</span>
+  </div>
+</header>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">What an ad visitor sees</div>
+    <h2>Profile today, and after launch</h2>
+    <p>The agency's ads send people to this profile. Today they find 11 followers, posts with no captions, Instagram "AI content" labels and sites that aren't client projects. After launch they find three real projects, a clear method, a real 5.0 Google review, the founder, and one next step in the bio and in every caption.</p>
+  </div>
+  <div class="pair">
+    <figure><img src="m/profile_today.jpg" alt="The Neon Pixels Instagram profile today" loading="lazy"><figcaption>Today</figcaption></figure>
+    <figure><img src="m/profile_after.jpg" alt="The Neon Pixels Instagram profile after launch, with the new bio, highlights and grid" loading="lazy"><figcaption>After launch: new bio, highlights and grid</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">The full grid</div>
+    <h2>Eighteen posts, every row balanced</h2>
+    <p>Fifteen new posts on top, the three old posts we keep underneath. Each row mixes projects, expertise, studio and proof.</p>
+  </div>
+  <figure class="grid-img"><img src="m/grid.jpg" alt="The 12-post Instagram grid after launch" loading="lazy"><figcaption>Top row is the newest: 15 Studio principles · 14 Google reviews · 13 BMC case study</figcaption></figure>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Post by post, in publishing order</div>
+    <h2>The fifteen posts</h2>
+  </div>
+
+  <article class="post" id="p01">
+    <div class="post-head"><div class="num">01</div><div class="post-title"><h3>BMC Development reel</h3><div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel · 19.6 s</span><span class="tag">Plan: website reveal</span></div></div></div>
+    <div class="reel">
+      <video controls playsinline preload="none" poster="m/cover_P01_BMC.jpg" src="m/P01_Reel_BMC.mp4"></video>
+      <img src="m/cover_P01_BMC.jpg" alt="Cover: Une villa qu'on visite avant de prendre l'avion" loading="lazy">
+    </div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>Cover: "A villa you visit before boarding the plane." BMC Development · Immersive website</li>
+        <li>"For a buyer abroad, the website is the first contact with the property."</li>
+        <li>"Each residence has its own chapter."</li>
+        <li>"Full screen, slow transitions: architecture first."</li>
+        <li>"A selection of residences. Not a property portal."</li>
+        <li>End card: logo, neonpixels.fr, "Free Neon Diagnostic · link in bio"</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>The hook speaks from the buyer's side, exactly in the style of Ivana's example. Visitors see a real site in motion on a phone, the way they would use it, and learn why it was built that way.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">BMC DEVELOPMENT · LIBAN
+
+LE DÉFI
+Présenter une sélection de résidences privées à des acheteurs qui les découvrent à distance, sans reprendre les codes d’un portail immobilier.
+
+NOTRE APPROCHE
+Une séquence plein écran où chaque résidence a son chapitre : un grand visuel, une présentation courte, les informations clés.
+
+L’EXPÉRIENCE
+Des transitions lentes qui laissent l’architecture au premier plan, et un accès WhatsApp à chaque étape de la visite.
+
+LE RÉSULTAT
+Un acheteur à l’étranger découvre chaque résidence comme une visite, et peut écrire à BMC sans quitter le site.
+
+Site immersif · Direction artistique · Développement
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#BMCDevelopment #SiteImmersif #Architecture #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p02">
+    <div class="post-head"><div class="num">02</div><div class="post-title"><h3>"3D, when it helps people choose"</h3><div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Single post · template 02</span><span class="tag">Plan: what we do</span></div></div></div>
+    <div class="single"><img src="m/P02.jpg" alt="Post: La 3D, quand elle aide à choisir" loading="lazy"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><p>"3D, when it helps people choose." 3D, scroll animations and WebGL: we use them to show a product, a place or an offer. Never to decorate.</p></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>It answers the question premium clients actually have about 3D ("is it worth it?") with a clear principle taken from the studio's own site.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Une animation doit aider le visiteur, pas seulement l’impressionner.
+
+La 3D, les animations au scroll et le WebGL ont un rôle précis : faire comprendre un produit, révéler un lieu, rendre une offre plus claire.
+
+Une interaction qui n’aide pas à choisir n’a pas sa place sur votre site.
+
+3D · WebGL · Animation au scroll · Motion design
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#3D #WebGL #MotionDesign #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p03">
+    <div class="post-head"><div class="num">03</div><div class="post-title"><h3>Marco behind the scenes</h3><div class="meta"><span class="tag pillar">Studio</span><span class="tag">Reel · 18 s</span><span class="tag">Plan: behind the scenes in Paris</span></div></div></div>
+    <div class="reel">
+      <video controls playsinline preload="none" poster="m/cover_P03_STUDIO.jpg" src="m/P03_Reel_Studio.mp4"></video>
+      <img src="m/cover_P03_STUDIO.jpg" alt="Cover: La personne qui conçoit votre site">
+    </div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>Cover: "The person who designs your website." Marco Bertoli · Founder · Paris</li>
+        <li>"Marco Bertoli runs every project, from the first call to launch."</li>
+        <li>"Every screen is designed, then tested on mobile."</li>
+        <li>"An independent studio, in Paris."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Real footage of Marco at work in Paris cafés: the human side of the studio, which the Studio pillar is for.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Votre site est conçu par la personne avec qui vous parlez.
+
+Marco Bertoli pilote chaque projet, du premier appel à la mise en ligne : la direction artistique, les écrans, puis les tests sur mobile.
+
+Un studio indépendant, à Paris.
+
+Direction artistique · UX/UI · Développement
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#StudioDigital #Paris #Coulisses #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p04">
+    <div class="post-head"><div class="num">04</div><div class="post-title"><h3>Vision d'Avenir case study</h3><div class="meta"><span class="tag pillar">Projets</span><span class="tag">Carousel · 8 cards</span><span class="tag">Plan: case study highlight</span></div></div></div>
+    <div class="strip">
+      <img src="m/P04_1.jpg" alt="Card 1" loading="lazy"><img src="m/P04_2.jpg" alt="Card 2" loading="lazy"><img src="m/P04_3.jpg" alt="Card 3" loading="lazy"><img src="m/P04_4.jpg" alt="Card 4" loading="lazy"><img src="m/P04_5.jpg" alt="Card 5" loading="lazy"><img src="m/P04_6.jpg" alt="Card 6" loading="lazy"><img src="m/P04_7.jpg" alt="Card 7" loading="lazy"><img src="m/P04_8.jpg" alt="Card 8" loading="lazy">
+    </div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "Great brands, one storefront." Discover the project →</li>
+        <li>2 The project: "A shop in Paris. Customers abroad."</li>
+        <li>3 The challenge: "Every brand has its own world."</li>
+        <li>4–5 Our approach: "One page per brand." "Everything you need to decide."</li>
+        <li>6 What changed: customers find a model by brand, category or use; each brand keeps its world; availability before ordering; ordering in French, English or Spanish</li>
+        <li>7 Takeaway for your site: "Selling several brands?"</li>
+        <li>8 "Your project starts with a diagnostic."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>It follows Ivana's case-study structure (challenge, what we did, what changed) using only facts from the studio's own case study. Card 7 hands the visitor a lesson they can apply to their own shop, so the post is worth saving, and card 8 turns that interest into a Diagnostic request.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">VISION D’AVENIR · PARIS
+
+LE DÉFI
+Réunir de grandes maisons d’optique dans une seule boutique en ligne, sans effacer leurs univers, pour une clientèle française et internationale.
+
+NOTRE APPROCHE
+Une page par maison, avec une introduction, une sélection et tous les modèles. Une grille, une typographie et des fiches produit communes gardent le catalogue cohérent.
+
+L’EXPÉRIENCE
+Une recherche par marque, par catégorie et par usage, et des fiches qui réunissent visuels, caractéristiques et disponibilités.
+
+LE RÉSULTAT
+La boutique vend en ligne, en français, en anglais et en espagnol, et chaque client voit la disponibilité d’un modèle avant de commander.
+
+Vous vendez plusieurs marques ? La dernière image est pour vous.
+
+Site e-commerce · Direction artistique · Développement
+
+Explorer l’expérience → visionavenir.fr
+
+NEON PIXELS® PARIS
+
+#VisionDAvenir #Optique #Ecommerce #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p05">
+    <div class="post-head"><div class="num">05</div><div class="post-title"><h3>The method in five steps</h3><div class="meta"><span class="tag pillar">Méthode</span><span class="tag">Carousel · 7 cards</span><span class="tag">Plan: from brief to launch</span></div></div></div>
+    <div class="strip">
+      <img src="m/P05_1.jpg" alt="Card 1" loading="lazy"><img src="m/P05_2.jpg" alt="Card 2" loading="lazy"><img src="m/P05_3.jpg" alt="Card 3" loading="lazy"><img src="m/P05_4.jpg" alt="Card 4" loading="lazy"><img src="m/P05_5.jpg" alt="Card 5" loading="lazy"><img src="m/P05_6.jpg" alt="Card 6" loading="lazy"><img src="m/P05_7.jpg" alt="Card 7" loading="lazy">
+    </div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "You know where your website stands. At every step."</li>
+        <li>2–6 Scoping · Art direction &amp; UX/UI · Development · Testing &amp; launch · Follow-up &amp; updates, each with what the client gets</li>
+        <li>7 "A set timeline. Tracked steps." plus the Diagnostic offer</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>The biggest fear when hiring a web studio is losing control of time and budget. This answers it step by step, in the studio's own words from neonpixels.fr.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Un projet web ne devrait jamais être une boîte noire.
+
+Chaque mission suit cinq étapes : cadrage, direction artistique &amp; UX/UI, développement, tests &amp; mise en ligne, suivi. À chaque étape, vous validez.
+
+Le calendrier est partagé dès le départ, et une version de travail en ligne permet de suivre l’avancement. Tout commence par un Diagnostic Neon offert.
+
+Cadrage · Design · Développement · Suivi
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#Methode #UXUI #CreationSiteWeb #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p06">
+    <div class="post-head"><div class="num">06</div><div class="post-title"><h3>"Test your website in 5 minutes"</h3><div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Carousel · 7 cards</span><span class="tag">Plan: focus on one skill</span></div></div></div>
+    <div class="strip">
+      <img src="m/P06_1.jpg" alt="Card 1" loading="lazy"><img src="m/P06_2.jpg" alt="Card 2" loading="lazy"><img src="m/P06_3.jpg" alt="Card 3" loading="lazy"><img src="m/P06_4.jpg" alt="Card 4" loading="lazy"><img src="m/P06_5.jpg" alt="Card 5" loading="lazy"><img src="m/P06_6.jpg" alt="Card 6" loading="lazy"><img src="m/P06_7.jpg" alt="Card 7" loading="lazy">
+    </div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "Test your website in 5 minutes." Take your phone, open your site, answer five questions.</li>
+        <li>2 "Can people tell what you do in 3 seconds?"</li>
+        <li>3 "Can they find the contact button without searching?"</li>
+        <li>4 "Can they read without zooming?"</li>
+        <li>5 "Do images load fast, even on 4G?"</li>
+        <li>6 "Does your form actually arrive?" Send yourself a test request.</li>
+        <li>7 "A 'no'? That's where we come in." The free Diagnostic.</li></ul></div>
+      <div class="note"><h4>Why it works for visitors (and makes money)</h4><p>This is the post most likely to be saved and shared. A business owner can do the test right away on their own phone, and every "no" they find leads straight to the free Diagnostic, which is how Neon Pixels wins projects. The good examples shown are the studio's own Neova and Vision sites.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Votre site travaille-t-il vraiment pour vous sur mobile ? Le test prend 5 minutes.
+
+Prenez votre téléphone, ouvrez votre site et répondez aux cinq questions du carrousel : comprendre, agir, lire, attendre, envoyer.
+
+Une réponse « non » ? C’est exactement ce que regarde le Diagnostic Neon, offert.
+
+Responsive · UX · Performance
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#SiteMobile #UX #Performance #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p07">
+    <div class="post-head"><div class="num">07</div><div class="post-title"><h3>Neova Space reel</h3><div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel · 22.2 s</span><span class="tag">Plan: project detail</span></div></div></div>
+    <div class="reel">
+      <video controls playsinline preload="none" poster="m/cover_P07_NEOVA.jpg" src="m/P07_Reel_Neova.mp4"></video>
+      <img src="m/cover_P07_NEOVA.jpg" alt="Cover: Acheter à Paris, sans y habiter" loading="lazy">
+    </div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>Cover: "Buy in Paris without living there." Neova Space · Editorial website</li>
+        <li>"Neova Space helps buyers, sometimes far from Paris."</li>
+        <li>"Photos and materials first."</li>
+        <li>"One simple thread: find, transform, manage."</li>
+        <li>"The site speaks French and English."</li>
+        <li>"And getting in touch stays short."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Calm pacing, one project and close mobile views, which is exactly what the agency asked for after the first ad. Each caption names a design decision and the reason behind it.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">NEOVA SPACE · PARIS
+
+LE DÉFI
+Présenter une offre complète (recherche, acquisition, rénovation, ameublement, gestion) et rassurer des clients parfois éloignés de Paris.
+
+NOTRE APPROCHE
+Un fil simple pour tout le site : trouver, transformer, gérer. Une grille large et une palette neutre qui laissent les photographies au premier plan.
+
+L’EXPÉRIENCE
+Des transitions discrètes, des pages de service reliées aux réalisations, et une navigation directe.
+
+LE RÉSULTAT
+L’offre se lit en un seul fil, du premier écran à la prise de contact, en français comme en anglais.
+
+Site éditorial · Direction artistique · Développement
+
+Explorer l’expérience → neovaspace.com
+
+NEON PIXELS® PARIS
+
+#NeovaSpace #ImmobilierParis #Renovation #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p08">
+    <div class="post-head"><div class="num">08</div><div class="post-title"><h3>Real Google review</h3><div class="meta"><span class="tag pillar">Preuves</span><span class="tag">Single post · template 04</span><span class="tag">Plan: client feedback</span></div></div></div>
+    <div class="single"><img src="m/P08.jpg" alt="Post: a Google review quote and the 5.0 rating" loading="lazy"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><p>"Smooth communication, responsiveness, deadlines met and above all real support from start to finish." Jean D., online store, Google review. 5.0 average on Google, 5 reviews.</p></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Ivana rejected invented quotes and numbers. This is a real, public review and a real rating, so anyone can check it, which is what makes it believable.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">« Communication fluide, réactivité, délais respectés et surtout un vrai accompagnement du début à la fin. »
+Jean D., site de vente en ligne · Avis Google
+
+Merci Jean. Savoir à tout moment où en est son projet, du premier échange à la mise en ligne : c’est ce que chaque client devrait pouvoir attendre d’un studio.
+
+5,0 sur Google · 5 avis
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#AvisClient #Temoignage #StudioDigital #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p09">
+    <div class="post-head"><div class="num">09</div><div class="post-title"><h3>The founder runs every project</h3><div class="meta"><span class="tag pillar">Studio</span><span class="tag">Single post · template 01</span><span class="tag">Plan: studio presentation</span></div></div></div>
+    <div class="single"><img src="m/P09.jpg" alt="Post: Votre projet, piloté par son fondateur" loading="lazy"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><p>"Your project, run by its founder." Marco Bertoli founded Neon Pixels in Paris in 2024 after eight years as Lead Tech at Hitachi. He stays your contact from the first call to delivery. Independent studio · 18 rue Bosquet, Paris 7e.</p></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Premium clients pay for senior attention. This shows them who they will actually work with: Marco's portrait from neonpixels.fr (in black and white to stay on the palette) and facts taken straight from the site.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Chez Neon Pixels, pas d’intermédiaire entre vous et la personne qui conçoit votre site.
+
+Marco Bertoli a fondé le studio à Paris en 2024, après huit ans comme Lead Tech chez Hitachi. Il pilote chaque projet lui-même, du premier appel à la livraison, et s’entoure de spécialistes en UX/UI, 3D, animation ou SEO technique quand une mission le demande.
+
+Le studio limite le nombre de projets en parallèle, pour rester disponible.
+
+Studio indépendant · 18 rue Bosquet, Paris 7e
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#Fondateur #StudioDigital #Paris #WebDesign #NeonPixels</p></details>
+  </article>
+  <article class="post" id="p10">
+    <div class="post-head"><div class="num">10</div><div class="post-title"><h3>Vision d'Avenir reel</h3><div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel · 22 s</span><span class="tag">Plan: UI showcase</span></div></div></div>
+    <div class="reel"><video controls playsinline preload="none" poster="m/cover_P10_VISION.jpg" src="m/P10_Reel_Vision.mp4"></video><img src="m/cover_P10_VISION.jpg" alt="Cover"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>Cover: "The whole shop, in your pocket." Vision d'Avenir · E-commerce site</li>
+        <li>"Vision d'Avenir brings together great eyewear houses, in Paris."</li>
+        <li>"Each house has its page, with its filters."</li>
+        <li>"Search by brand, category and use."</li>
+        <li>"Prices and availability on every product page."</li>
+        <li>"In French, English and Spanish."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>A real client's shop, shown on a phone the way buyers actually use it. Each caption names something the site does for them.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">VISION D’AVENIR · PARIS
+
+LE DÉFI
+Faire vivre en ligne une boutique d’optique qui réunit de grandes maisons, pour une clientèle française et internationale.
+
+NOTRE APPROCHE
+Une page par maison, des filtres par marque, catégorie et usage, et des fiches produit communes.
+
+L’EXPÉRIENCE
+Sur mobile, on passe d’une maison à un modèle en quelques gestes, avec le prix et la disponibilité sous les yeux.
+
+LE RÉSULTAT
+Toute la boutique tient dans la poche du client, en français, en anglais et en espagnol.
+
+Site e-commerce · UX/UI · Développement
+
+Explorer l’expérience → visionavenir.fr
+
+NEON PIXELS® PARIS
+
+#VisionDAvenir #Ecommerce #UXUI #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p11">
+    <div class="post-head"><div class="num">11</div><div class="post-title"><h3>The 3D product demo</h3><div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Reel · 17 s</span><span class="tag">Plan: what we do (3D)</span></div></div></div>
+    <div class="reel"><video controls playsinline preload="none" poster="m/cover_P11_NP3D.jpg" src="m/P11_Reel_3D.mp4"></video><img src="m/cover_P11_NP3D.jpg" alt="Cover"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>Cover: "A product you want to touch." 3D product experience · WebGL · Three.js</li>
+        <li>"Real-time 3D, right in the browser."</li>
+        <li>"Scrolling guides the discovery, nothing to install."</li>
+        <li>"3D serves the product, never the other way round."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>The live 3D demo from neonpixels.fr plus Marco's own 3D work: proof the studio can do it, not just talk about it.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Un produit qu’on a envie de toucher, à travers l’écran.
+
+La 3D en temps réel montre un produit sous tous les angles, directement dans le navigateur. Le scroll guide la découverte, sans application à installer.
+
+Chez Neon Pixels, la 3D sert le produit, jamais l’inverse.
+
+3D · WebGL · Three.js · Animation au scroll
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#3D #WebGL #ThreeJS #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p12">
+    <div class="post-head"><div class="num">12</div><div class="post-title"><h3>Behind the scenes, brief to site</h3><div class="meta"><span class="tag pillar">Méthode</span><span class="tag">Carousel · 7 cards</span><span class="tag">Plan: wireframe, design, dev, testing</span></div></div></div>
+    <div class="strip"><img src="m/P12_1.jpg" alt="Card 1"><img src="m/P12_2.jpg" alt="Card 2"><img src="m/P12_3.jpg" alt="Card 3"><img src="m/P12_4.jpg" alt="Card 4"><img src="m/P12_5.jpg" alt="Card 5"><img src="m/P12_6.jpg" alt="Card 6"><img src="m/P12_7.jpg" alt="Card 7"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "Between your brief and your site."</li>
+        <li>2 Step 1 Understand: "First, your business."</li>
+        <li>3 Step 2 Design: "The art direction."</li>
+        <li>4 Step 3 Develop: "The code, screen by screen." (BMC's site being built)</li>
+        <li>5 Step 4 Test: "Every screen checked."</li>
+        <li>6 Step 5 Go live: "Then the launch."</li>
+        <li>7 "Your project starts with a diagnostic."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Real footage of Marco and real code from a client build. It shows what the client pays for, step by step.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Entre votre brief et votre site, voici ce qui se passe.
+
+Comprendre votre métier, dessiner la direction artistique, développer avec une version de travail en ligne, tester chaque écran, puis mettre en ligne. À chaque étape, vous validez.
+
+Cadrage · Design · Développement · Tests
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#Coulisses #Methode #CreationSiteWeb #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p13">
+    <div class="post-head"><div class="num">13</div><div class="post-title"><h3>BMC Development case study</h3><div class="meta"><span class="tag pillar">Projets</span><span class="tag">Carousel · 7 cards</span><span class="tag">Plan: real project with results</span></div></div></div>
+    <div class="strip"><img src="m/P13_1.jpg" alt="Card 1"><img src="m/P13_2.jpg" alt="Card 2"><img src="m/P13_3.jpg" alt="Card 3"><img src="m/P13_4.jpg" alt="Card 4"><img src="m/P13_5.jpg" alt="Card 5"><img src="m/P13_6.jpg" alt="Card 6"><img src="m/P13_7.jpg" alt="Card 7"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "Show the architecture, not listings."</li>
+        <li>2 The project: "A developer in Lebanon. Buyers abroad."</li>
+        <li>3 The challenge: "Not a property portal."</li>
+        <li>4 Our approach: "One residence, one chapter."</li>
+        <li>5 The experience: "Architecture in the foreground."</li>
+        <li>6 The result: "A first contact, from a distance."</li>
+        <li>7 "Your project starts with a diagnostic."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Ivana's case-study order and your caption format, built only from BMC's own case study on neonpixels.fr.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">BMC DEVELOPMENT · LIBAN
+
+LE DÉFI
+Présenter quelques résidences privées à des acheteurs parfois loin du Liban, avec un site qui montre l’architecture plutôt que des annonces.
+
+NOTRE APPROCHE
+Chaque résidence a son chapitre en plein écran : un grand visuel, une présentation courte, les informations clés.
+
+L’EXPÉRIENCE
+Des transitions lentes entre les résidences, et un contact WhatsApp toujours à portée de main.
+
+LE RÉSULTAT
+Un premier contact avec les biens, à distance : chaque résidence se découvre comme une visite.
+
+Site immersif · Direction artistique · Développement
+
+Découvrir le projet → bmcdevelopmentlb.com
+
+NEON PIXELS® PARIS
+
+#BMCDevelopment #SiteImmersif #Architecture #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p14">
+    <div class="post-head"><div class="num">14</div><div class="post-title"><h3>Google reviews</h3><div class="meta"><span class="tag pillar">Preuves</span><span class="tag">Carousel · 4 cards</span><span class="tag">Plan: testimonial or review</span></div></div></div>
+    <div class="strip"><img src="m/P14_1.jpg" alt="Card 1"><img src="m/P14_2.jpg" alt="Card 2"><img src="m/P14_3.jpg" alt="Card 3"><img src="m/P14_4.jpg" alt="Card 4"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "5.0 on Google."</li>
+        <li>2 Christian Z.: "They built our website and our app with remarkable quality, attention to detail and exemplary professionalism."</li>
+        <li>3 Paul-Dominique L.: "A serious, responsive team that really masters the latest technologies. I recommend them with my eyes closed."</li>
+        <li>4 "Your project starts with a diagnostic."</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>Real, public reviews that anyone can check on Google.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">5,0 sur Google.
+
+Réactivité, qualité, délais respectés : les clients du studio le disent avec leurs propres mots. Merci à eux.
+
+Tous les avis sont sur la fiche Google de Neon Pixels.
+
+Avis clients · Google
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#AvisClients #Temoignages #StudioDigital #WebDesign #NeonPixels</p></details>
+  </article>
+
+  <article class="post" id="p15">
+    <div class="post-head"><div class="num">15</div><div class="post-title"><h3>Studio principles</h3><div class="meta"><span class="tag pillar">Studio</span><span class="tag">Carousel · 6 cards</span><span class="tag">Plan: values and vision</span></div></div></div>
+    <div class="strip"><img src="m/P15_1.jpg" alt="Card 1"><img src="m/P15_2.jpg" alt="Card 2"><img src="m/P15_3.jpg" alt="Card 3"><img src="m/P15_4.jpg" alt="Card 4"><img src="m/P15_5.jpg" alt="Card 5"><img src="m/P15_6.jpg" alt="Card 6"></div>
+    <div class="notes">
+      <div class="note"><h4>What each card says</h4><ul>
+        <li>1 "Four rules, on every project."</li>
+        <li>2 "The business before the interface."</li>
+        <li>3 "Design and development, together."</li>
+        <li>4 "Useful interactions."</li>
+        <li>5 "A check on every screen."</li>
+        <li>6 "An independent studio, in Paris." + the Diagnostic</li></ul></div>
+      <div class="note"><h4>Why it works for visitors</h4><p>How the studio thinks, in its own words from neonpixels.fr. Premium clients buy the approach as much as the result.</p></div>
+    </div>
+    <details open><summary>Caption</summary><p class="fr">Quatre règles, sur chaque projet.
+
+Le métier avant l’interface. Design et développement pensés ensemble. Des interactions utiles. Une vérification sur chaque écran.
+
+C’est la façon de travailler du studio, du premier appel à la mise en ligne.
+
+Studio indépendant · Paris
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#StudioDigital #Paris #Methode #WebDesign #NeonPixels</p></details>
+  </article>
+
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Profile clean-up</div>
+    <h2>Old posts, highlights and bio</h2>
+    <p>Nothing gets deleted. The three old posts that show real projects keep their place with new captions (the two reels also get new covers); the other nine are archived, so they're hidden but recoverable. The highlights use the deck's own pillar icons and colours.</p>
+  </div>
+  <div class="trio">
+    <figure><img src="m/cover_keep_g04.jpg" alt="New cover for the old Neova post" loading="lazy"><figcaption>Neova: "Find. Transform. Manage."</figcaption></figure>
+    <figure><img src="m/g05_old.jpg" alt="The old BMC code carousel, kept as it is" loading="lazy"><figcaption>BMC code carousel: kept as it is, new caption (photo posts can’t get a new cover)</figcaption></figure>
+    <figure><img src="m/cover_keep_g06.jpg" alt="New cover for the old BMC post" loading="lazy"><figcaption>BMC: "Architecture in the foreground"</figcaption></figure>
+  </div>
+  <div class="hl">
+    <figure><img src="m/h1.jpg" alt="" loading="lazy"><figcaption>Projets</figcaption></figure>
+    <figure><img src="m/h2.jpg" alt="" loading="lazy"><figcaption>Savoir-faire</figcaption></figure>
+    <figure><img src="m/h3.jpg" alt="" loading="lazy"><figcaption>Méthode</figcaption></figure>
+    <figure><img src="m/h4.jpg" alt="" loading="lazy"><figcaption>Studio</figcaption></figure>
+    <figure><img src="m/h5.jpg" alt="" loading="lazy"><figcaption>Avis</figcaption></figure>
+    <figure><img src="m/h6.jpg" alt="" loading="lazy"><figcaption>Diagnostic</figcaption></figure>
+  </div>
+  <p><strong>Bio:</strong> Independent digital studio · Paris 7e / Premium website design &amp; redesign · 3D · WebGL / ★ 5.0 on Google / Free Neon Diagnostic → (link: neonpixels.fr/#diagnostic)</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Your strategy and the agency's feedback</div>
+    <h2>Checked against your plan</h2>
+    <p>Every rule from your strategy deck and from Ivana's two emails, and how each one is handled.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rule</th><th>How it's applied</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="3">Your strategy deck</td></tr>
+      <tr><td>Grid plan order</td><td>Posts 01 to 15 follow your 15-post plan slot by slot</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>3 formats only</td><td>5 reels, 7 carousels, 3 single posts</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Every post in one of the 5 pillars</td><td>The pillar name is printed on every post</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>4 static templates</td><td>Message on stone (09), Expertise on ink (02), Proof on sage (08); projects as reels and a case-study carousel</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Locked reel cover</td><td>Real project frame, "Expérience digitale / XX", big title, service line, same type, portrait</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Colours and type</td><td>The 6 palette colours only; tall condensed capitals for titles as in the deck; Inter for text</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Headlines: one message, at most 10 words</td><td>Longest title is 8 words</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Captions: add value, 2 to 4 short paragraphs</td><td>Every caption explains one idea and ends with one call to action</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>CTAs from their list</td><td>Only "Découvrir nos réalisations", "Explorer l'expérience", "Prendre contact"</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>No fake numbers, jargon or AI-sounding phrases</td><td>Every fact comes from neonpixels.fr, the client sites or Google; the abstract tagline "Des idées en expériences durables" is left off</td><td><span class="st ok">Done</span></td></tr>
+      <tr class="group"><td colspan="3">Ivana's feedback</td></tr>
+      <tr><td>French first, native level</td><td>All French, correct French typography; one read-through by you or Marco before posting</td><td><span class="st wait">Proofread</span></td></tr>
+      <tr><td>Hooks from the client's side</td><td>"A villa you visit before boarding the plane", "Buy in Paris without living there"</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Proof = real quote or concrete fact</td><td>Real Google review and the public 5.0 rating</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Real projects only, visible on neonpixels.fr</td><td>BMC, Vision d'Avenir, Neova; concept sites archived</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Case study: challenge, what we did, what changed</td><td>Exactly this order in post 04</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Vary: project + behind the scenes + proof</td><td>Every grid row mixes them</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Covers: big title, no small text band</td><td>No text bands on any cover</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Video ending: logo + Neon Pulse sound, always the same</td><td>Same logo ending on all 5 reels, with the Neon Pulse we created (option A)</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Old posts: don't delete</td><td>3 kept with new captions (2 reels with new covers), 9 archived</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>"→" or "lien en bio", never "↓"</td><td>Used in every caption</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>Licensed music only</td><td>Royalty-free Pixabay track with no Content ID, already mixed in</td><td><span class="st ok">Done</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">The plan</div>
+    <h2>From ready to live, then to results</h2>
+    <p>Content is 100% done. What's left depends on your access, then on the ads setup.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Step</th><th>What happens</th><th>Who</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>1. Content</td><td>15 posts, captions in your format, profile set-up, Neon Pulse</td><td>Us</td><td><span class="st ok">Done</span></td></tr>
+      <tr><td>2. Your review</td><td>You check the 15 posts on this page and confirm the sound (A, B or C)</td><td>You</td><td><span class="st wait">Waiting</span></td></tr>
+      <tr><td>3. Access</td><td>Partner access in Meta Business Suite, plus the original files of the old videos (optional)</td><td>You</td><td><span class="st wait">Waiting</span></td></tr>
+      <tr><td>4. Day 0</td><td>Profile clean-up: archive the misfits, new covers and captions on the kept posts, bio, link, highlights</td><td>Us</td><td><span class="st ok">Ready to do</span></td></tr>
+      <tr><td>5. Days 1–5</td><td>3 posts a day in plan order, every post tagged "Paris, France"</td><td>Us</td><td><span class="st ok">Ready to do</span></td></tr>
+      <tr><td>6. Results setup</td><td>Tracked bio link, "DIAGNOSTIC" auto-reply, "How did you find us?" in the form, lead sheet</td><td>Us + Marco</td><td><span class="st wait">Next</span></td></tr>
+      <tr><td>7. Ads</td><td>Agency handover, his numbers, a "Lead" signal on the form, a landing page; then a test campaign at €20–30 a day with a weekly report</td><td>Us, you and Marco</td><td><span class="st wait">Next</span></td></tr>
+      <tr><td>8. Ongoing</td><td>3 posts a week, monthly report, more budget behind what brings requests</td><td>Us</td><td><span class="st wait">After launch</span></td></tr>
+    </tbody>
+  </table></div>
+  <h3>Publishing days (once access is in)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Day</th><th>09:00</th><th>12:30</th><th>18:00</th></tr></thead>
+    <tbody>
+      <tr><td>Day 1</td><td>01 BMC reel</td><td>02 3D post</td><td>03 Marco behind the scenes</td></tr>
+      <tr><td>Day 2</td><td>04 Vision case study</td><td>05 Method</td><td>06 Test your site</td></tr>
+      <tr><td>Day 3</td><td>07 Neova reel</td><td>08 Google review</td><td>09 Marco, founder</td></tr>
+      <tr><td>Day 4</td><td>10 Vision reel</td><td>11 3D demo</td><td>12 Behind the scenes</td></tr>
+      <tr><td>Day 5</td><td>13 BMC case study</td><td>14 Google reviews</td><td>15 Studio principles</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">Paris time. Every post is tagged "Paris, France". After the launch: 3 posts a week, Tuesday to Thursday.</p>
+</section>
+
+</div>
+
+</body>
+</html>
