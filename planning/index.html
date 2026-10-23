@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Neon Pixels · Launch schedule</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151719'/%3E%3Cpath d='M14 50V14l32 38V30h6a10 10 0 0 0 0-20H30' fill='none' stroke='%23F1EEE7' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Same palette and type as the launch page; one column, read top to bottom in publishing order. */
+:root {
+  --bg: #F1EEE7; --surface: #E6E1D8; --fg: #151719; --muted: #55575A; --line: rgba(21,23,25,0.14);
+  --accent: #8C774F; --sage: #6F7F6E; --ok-bg: rgba(111,127,110,0.16); --wait-bg: rgba(182,160,120,0.22);
+  --display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14);
+    --accent: #C9B48A; --sage: #9EAD9D; --ok-bg: rgba(158,173,157,0.16); --wait-bg: rgba(182,160,120,0.2); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14);
+  --accent: #C9B48A; --sage: #9EAD9D; --ok-bg: rgba(158,173,157,0.16); --wait-bg: rgba(182,160,120,0.2); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 16px; padding-block: 40px 80px; display: flex; flex-direction: column; gap: 64px; }
+@media (min-width: 700px) { .wrap { padding-inline: 24px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; text-wrap: balance; margin: 0; line-height: 0.95; }
+h1 { font-size: clamp(52px, 9vw, 96px); }
+h2 { font-size: clamp(36px, 5.5vw, 52px); }
+h3 { font-size: clamp(26px, 4vw, 34px); }
+h4 { margin: 0 0 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+p { margin: 0; max-width: 68ch; }
+a { color: inherit; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); }
+header, section { display: flex; flex-direction: column; gap: 22px; }
+.section-head { display: flex; flex-direction: column; gap: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+.chip b { font-weight: 600; color: var(--accent); }
+.steps { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+.panel { background: var(--surface); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 18px; }
+.note { font-size: 14px; color: var(--muted); }
+/* copy boxes */
+.copybox { position: relative; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
+.panel .copybox { background: var(--bg); }
+.cap { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.5; padding: 14px 14px 56px; }
+.copy { position: absolute; right: 10px; bottom: 10px; font: 600 13px var(--body); padding: 9px 14px; border-radius: 999px; border: 0;
+        background: var(--fg); color: var(--bg); cursor: pointer; min-height: 40px; }
+.copy.ok { background: var(--sage); }
+.copy:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label { font-size: 14px; font-weight: 600; }
+.field-label small { font-weight: 400; color: var(--muted); }
+.field .cap { padding-bottom: 14px; padding-right: 110px; }
+.field .copy { top: 50%; bottom: auto; transform: translateY(-50%); }
+.field.tall .cap { padding: 14px 14px 56px; }
+.field.tall .copy { top: auto; bottom: 10px; transform: none; }
+/* checklists */
+.done { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; cursor: pointer; }
+.done input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--sage); flex: none; }
+.done small { color: var(--muted); }
+.archive { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px 24px; }
+/* week table */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 14px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+th small { display: block; letter-spacing: 0.04em; text-transform: none; font-weight: 500; }
+tr:last-child td { border-bottom: 0; }
+td.time { white-space: nowrap; font-weight: 600; }
+td a { text-decoration: none; }
+td a b { color: var(--accent); font-variant-numeric: tabular-nums; }
+td a:hover { text-decoration: underline; }
+/* posts */
+.post { display: flex; flex-direction: column; gap: 20px; padding-top: 32px; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+.post-head { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+.num { font-family: var(--display); font-size: 84px; line-height: 0.8; color: var(--accent); font-variant-numeric: tabular-nums; }
+.post-title { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1 1 260px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; background: var(--surface); }
+.tag.pillar { background: var(--sage); color: var(--bg); }
+.when { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; font-variant-numeric: tabular-nums; }
+.when-day { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.when-time { font-family: var(--display); font-size: 40px; line-height: 0.9; }
+.when-time small { font-family: var(--body); font-size: 12px; color: var(--muted); }
+.when-ind { font-size: 13px; color: var(--accent); font-weight: 600; }
+.post-body { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 24px; align-items: start; }
+.thumb { margin: 0; }
+.thumb img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.post-main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.path { font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.files ul { margin: 6px 0 10px; padding-left: 18px; font-size: 14px; columns: 2 180px; }
+.tip { font-size: 14px; color: var(--muted); }
+.tip b { color: var(--fg); font-weight: 600; }
+.meaning { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.meaning span { font-weight: 600; color: var(--fg); }
+@media (max-width: 640px) {
+  .post-body { grid-template-columns: 1fr; }
+  .thumb { max-width: 150px; }
+  .when { align-items: flex-start; width: 100%; flex-direction: row; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+  .when-time { font-size: 32px; }
+  .num { font-size: 68px; }
+  .field .cap { padding: 14px 14px 56px; }
+  .field .copy { top: auto; bottom: 10px; transform: none; }
+}
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Neon Pixels · Instagram · @neonpixels.fr</div>
+  <h1>Launch schedule</h1>
+  <p class="lead">Profile clean-up on Sunday 25 October, then the 15 posts in plan order, three a day from Monday 26 to Friday 30 October. Every post is scheduled in Metricool and publishes automatically.</p>
+  <div class="chips">
+    <span class="chip"><b>Day 0</b> Sun 25 Oct</span>
+    <span class="chip"><b>15 posts</b> 01 → 15</span>
+    <span class="chip"><b>Paris</b> 09:00 · 12:30 · 18:00</span>
+    <span class="chip"><b>India</b> 13:30 · 17:00 · 22:30</span>
+  </div>
+</header>
+
+<section>
+  <div class="section-head"><div class="eyebrow">Before scheduling</div><h2>Metricool set-up</h2></div>
+  <ol class="steps">
+    <li>Check that <b>@neonpixels.fr</b> shows as connected in Metricool.</li>
+    <li>Set the brand's time zone to <b>Paris (Europe/Paris)</b>, so every time below is typed exactly as shown.</li>
+    <li>Files are on the laptop in <b>Downloads / Neon Pixels - Instagram - Lancement</b>, one folder per post.</li>
+    <li>Schedule in order, <b>01 first</b>. Paste each caption exactly, with no edits.</li>
+    <li>Every post: location <b>Paris, France</b>. Posts and carousels keep their 3:4 shape. Reels use the cover image supplied.</li>
+    <li>Tick each post below once it's scheduled. The ticks are saved in this browser only.</li>
+  </ol>
+</section>
+
+<section id="day0">
+  <div class="section-head"><div class="eyebrow">Day 0 · Sunday 25 October</div><h2>Profile clean-up</h2>
+  <p>Done in this order before post 01 goes out. Archived posts are hidden, not deleted: any of them can be restored from the app (Profile → menu → Archive).</p></div>
+  <div class="panel">
+    <h4>1 · Archive all 12 old posts</h4>
+    <ul class="archive"><li><label class="done"><input type="checkbox" data-key="a01"> <span><b>« Paris, révélé sur chaque écran »</b> <small>Neova reel, “Paris, revealed on every screen”</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a02"> <span><b>Carrousel « code BMC »</b> <small>BMC code carousel</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a03"> <span><b>Reel BMC ordinateur + mobile</b> <small>BMC desktop + mobile reel</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a04"> <span><b>« Notre mission »</b> <small>Our mission</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a05"> <span><b>« Nos expertises »</b> <small>Our expertise</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a06"> <span><b>« Notre approche »</b> <small>Our approach</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a07"> <span><b>« Plus qu’un bien »</b> <small>More than a property</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a08"> <span><b>« Site web / Faire ressentir »</b> <small>Website / Make people feel</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a09"> <span><b>« Chaque écran a un rôle »</b> <small>Every screen has a role</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a10"> <span><b>« Concevoir avant de coder »</b> <small>Design before coding</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a11"> <span><b>« Siteweb Hospitality »</b> <small>Hospitality website</small></span></label></li><li><label class="done"><input type="checkbox" data-key="a12"> <span><b>« Une adresse. Une histoire. »</b> <small>One address. One story.</small></span></label></li></ul>
+  </div>
+  <div class="panel">
+    <h4>2 · Edit profile</h4>
+    <div class="field"><div class="field-label">Name <small>· 27 of 30 characters · only 2 name changes allowed in 14 days</small></div><div class="copybox"><div class="cap" id="pname">NEON PIXELS® | Studio Paris</div><button type="button" class="copy" data-copy="pname">Copy</button></div></div>
+    <div class="field tall"><div class="field-label">Bio <small>· Victor's text, word for word · in English: Premium websites &amp; immersive experiences ✦ / Design • 3D • Custom development / ⭐ 5/5 on Google / ↓ Let's talk about your project</small></div><div class="copybox"><div class="cap" id="pbio">Sites web premium &amp; expériences immersives ✦
+Design • 3D • Développement sur mesure
+⭐ 5/5 sur Google
+↓ Parlons de votre projet</div><button type="button" class="copy" data-copy="pbio">Copy bio</button></div></div>
+    <div class="field"><div class="field-label">Link</div><div class="copybox"><div class="cap" id="plink">https://neonpixels.fr/#diagnostic</div><button type="button" class="copy" data-copy="plink">Copy</button></div></div>
+    <div class="field"><div class="field-label">Link title <small>· “Free Neon Diagnostic”</small></div><div class="copybox"><div class="cap" id="ptitle">Diagnostic Neon offert</div><button type="button" class="copy" data-copy="ptitle">Copy</button></div></div>
+    <p class="note">Category: <b>Web designer</b> (or “Agence de design”, design agency, if Instagram doesn't offer it). Highlights wait until there are stories to put in them.</p>
+    <label class="done"><input type="checkbox" data-key="d0"> Day 0 done: 12 archived, name, bio and link saved</label>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="eyebrow">Monday 26 → Friday 30 October</div><h2>The week</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Day</th><th>09:00 Paris<small>13:30 India</small></th><th>12:30 Paris<small>17:00 India</small></th><th>18:00 Paris<small>22:30 India</small></th></tr></thead>
+    <tbody>
+<tr><td class="time">Day 1 · Mon 26 Oct</td><td><a href="#p01"><b>01</b> BMC Development reel</a></td><td><a href="#p02"><b>02</b> 3D that transforms the customer experience</a></td><td><a href="#p03"><b>03</b> Marco behind the scenes</a></td></tr>
+<tr><td class="time">Day 2 · Tue 27 Oct</td><td><a href="#p04"><b>04</b> Vision d&#x27;Avenir case study</a></td><td><a href="#p05"><b>05</b> The method in five steps</a></td><td><a href="#p06"><b>06</b> Test your website in 5 minutes</a></td></tr>
+<tr><td class="time">Day 3 · Wed 28 Oct</td><td><a href="#p07"><b>07</b> Neova Space reel</a></td><td><a href="#p08"><b>08</b> Real Google review</a></td><td><a href="#p09"><b>09</b> The standards of an independent studio</a></td></tr>
+<tr><td class="time">Day 4 · Thu 29 Oct</td><td><a href="#p10"><b>10</b> Vision d&#x27;Avenir reel</a></td><td><a href="#p11"><b>11</b> The 3D product demo</a></td><td><a href="#p12"><b>12</b> Behind the scenes, brief to site</a></td></tr>
+<tr><td class="time">Day 5 · Fri 30 Oct</td><td><a href="#p13"><b>13</b> BMC Development case study</a></td><td><a href="#p14"><b>14</b> Google reviews</a></td><td><a href="#p15"><b>15</b> Four commitments</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">If anything slips, move the whole launch: never post out of order. When all 15 are live, the top row of the grid reads 15 · 14 · 13.</p>
+</section>
+
+<section>
+  <div class="section-head"><div class="eyebrow">Post by post</div><h2>The fifteen posts</h2></div>
+  
+<article class="post" id="p01">
+  <div class="post-head">
+    <div class="num">01</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel</span></div>
+      <h3>BMC Development reel</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 1 · Mon 26 Oct</span><span class="when-time">09:00 <small>Paris</small></span><span class="when-ind">13:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/cover_P01_BMC.jpg" alt="Post 01: BMC Development reel" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 01 - Projets - Reel BMC</p>
+        <ul><li>Reel.mp4</li><li>Couverture.png (cover)</li></ul>
+        <p class="tip">Type: <b>Reel</b>. Upload <b>Reel.mp4</b>, then set <b>Couverture.png</b> as the cover. Don't add music: it's already in the video. Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c01">BMC DEVELOPMENT · LIBAN
+
+LE DÉFI
+Permettre à des acquéreurs internationaux de découvrir des résidences d’exception, où qu’ils se trouvent.
+
+NOTRE APPROCHE
+Chaque résidence bénéficie d’une présentation immersive qui révèle son architecture et son identité.
+
+L’EXPÉRIENCE
+Des transitions lentes qui laissent l’architecture au premier plan, et un accès WhatsApp à chaque étape de la visite.
+
+LE RÉSULTAT
+Une expérience digitale pensée pour donner aux acquéreurs le sentiment de découvrir chaque propriété avant même de se déplacer.
+
+Site immersif · Direction artistique · Développement
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#BMCDevelopment #SiteImmersif #Architecture #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c01">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> BMC Development, Lebanon. The challenge: let buyers abroad discover exceptional homes from wherever they are. Our approach: each home gets an immersive page that shows its architecture. The experience: slow transitions, and WhatsApp at every step. The result: buyers feel they&#x27;ve seen the property before they travel. Ends with “See our work → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s01"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p02">
+  <div class="post-head">
+    <div class="num">02</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Single post</span></div>
+      <h3>3D that transforms the customer experience</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 1 · Mon 26 Oct</span><span class="when-time">12:30 <small>Paris</small></span><span class="when-ind">17:00 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P02.jpg" alt="Post 02: 3D that transforms the customer experience" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 02 - Savoir-faire - Post 3D</p>
+        <ul><li>Post.png</li></ul>
+        <p class="tip">Type: <b>Post</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c02">La 3D qui transforme l’expérience client.
+
+Modélisation 3D, animations interactives et technologies WebGL : nous créons des expériences immersives qui valorisent vos produits et facilitent la décision d’achat.
+
+3D · WebGL · Animation au scroll · Motion design
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#3D #WebGL #MotionDesign #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c02">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> 3D that transforms the customer experience. 3D models, interactive animation and WebGL: we build immersive experiences that show products at their best and make buying easier. Ends with “See our work → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s02"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p03">
+  <div class="post-head">
+    <div class="num">03</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Studio</span><span class="tag">Reel</span></div>
+      <h3>Marco behind the scenes</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 1 · Mon 26 Oct</span><span class="when-time">18:00 <small>Paris</small></span><span class="when-ind">22:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/cover_P03_STUDIO.jpg" alt="Post 03: Marco behind the scenes" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 03 - Studio - Reel coulisses</p>
+        <ul><li>Reel.mp4</li><li>Couverture.png (cover)</li></ul>
+        <p class="tip">Type: <b>Reel</b>. Upload <b>Reel.mp4</b>, then set <b>Couverture.png</b> as the cover. Don't add music: it's already in the video. Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c03">Chez Neon Pixels, chaque projet bénéficie d’un accompagnement direct, de la première réflexion jusqu’à sa mise en ligne.
+
+De la direction artistique au développement, chaque détail est pensé pour offrir une expérience cohérente sur tous les supports.
+
+Direction artistique · UX/UI · Développement
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#StudioDigital #Paris #Coulisses #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c03">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> At Neon Pixels every project gets direct support, from the first idea to launch. From art direction to development, every detail is designed to work on every device. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s03"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p04">
+  <div class="post-head">
+    <div class="num">04</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Carousel · 8 images</span></div>
+      <h3>Vision d&#x27;Avenir case study</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 2 · Tue 27 Oct</span><span class="when-time">09:00 <small>Paris</small></span><span class="when-ind">13:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P04_1.jpg" alt="Post 04: Vision d&#x27;Avenir case study" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 04 - Projets - Carrousel Vision d&#x27;Avenir</p>
+        <ul><li>Image 1 sur 8.png</li><li>Image 2 sur 8.png</li><li>Image 3 sur 8.png</li><li>Image 4 sur 8.png</li><li>Image 5 sur 8.png</li><li>Image 6 sur 8.png</li><li>Image 7 sur 8.png</li><li>Image 8 sur 8.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c04">VISION D’AVENIR · PARIS
+
+LE DÉFI
+Réunir de grandes maisons d’optique dans une seule boutique en ligne, sans effacer leurs univers, pour une clientèle française et internationale.
+
+NOTRE APPROCHE
+Chaque maison dispose de son propre univers, tout en s’intégrant dans une expérience d’achat harmonieuse et intuitive. Une identité visuelle cohérente et une navigation soignée assurent une expérience fluide à travers l’ensemble du catalogue.
+
+L’EXPÉRIENCE
+Une recherche par marque, par catégorie et par usage, et des fiches qui réunissent visuels, caractéristiques et disponibilités.
+
+LE RÉSULTAT
+La boutique vend en ligne, en français, en anglais et en espagnol, et chaque client voit la disponibilité d’un modèle avant de commander.
+
+Vous vendez plusieurs marques ? Découvrez comment cette approche pourrait s’adapter à votre marque.
+
+Site e-commerce · Direction artistique · Développement
+
+Explorer l’expérience → visionavenir.fr
+
+NEON PIXELS® PARIS
+
+#VisionDAvenir #Optique #Ecommerce #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c04">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Vision d&#x27;Avenir, Paris. The challenge: put big eyewear brands in one online shop without losing each brand&#x27;s style, for French and foreign customers. Our approach: each brand keeps its own world inside one smooth shop. The experience: search by brand, category or use. The result: the shop sells in French, English and Spanish, and shows stock before you order. Ends with “Explore the experience → visionavenir.fr”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s04"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p05">
+  <div class="post-head">
+    <div class="num">05</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Méthode</span><span class="tag">Carousel · 7 images</span></div>
+      <h3>The method in five steps</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 2 · Tue 27 Oct</span><span class="when-time">12:30 <small>Paris</small></span><span class="when-ind">17:00 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P05_1.jpg" alt="Post 05: The method in five steps" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 05 - Methode - Carrousel 5 etapes</p>
+        <ul><li>Image 1 sur 7.png</li><li>Image 2 sur 7.png</li><li>Image 3 sur 7.png</li><li>Image 4 sur 7.png</li><li>Image 5 sur 7.png</li><li>Image 6 sur 7.png</li><li>Image 7 sur 7.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c05">La réussite d’un projet digital repose autant sur la créativité que sur la transparence et la rigueur.
+
+Chaque mission suit cinq étapes : cadrage, direction artistique &amp; UX/UI, développement, tests &amp; mise en ligne, suivi. Vous êtes impliqué dans chaque étape clé, avec une visibilité complète sur l’avancement de votre projet.
+
+Le calendrier est partagé dès le départ, et une version de prévisualisation accessible en ligne vous permet de suivre l’évolution de votre site.
+
+Échangeons sur votre projet lors d’un premier diagnostic offert.
+
+Cadrage · Design · Développement · Suivi
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#Methode #UXUI #CreationSiteWeb #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c05">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> A digital project needs creativity, but also transparency and rigour. Every project follows five steps: scoping, design, development, testing and launch, follow-up. You&#x27;re involved at each key step, see a shared schedule from day one, and follow your site on an online preview. Invites a free first diagnostic. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s05"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p06">
+  <div class="post-head">
+    <div class="num">06</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Carousel · 7 images</span></div>
+      <h3>Test your website in 5 minutes</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 2 · Tue 27 Oct</span><span class="when-time">18:00 <small>Paris</small></span><span class="when-ind">22:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P06_1.jpg" alt="Post 06: Test your website in 5 minutes" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 06 - Savoir-faire - Carrousel Testez votre site</p>
+        <ul><li>Image 1 sur 7.png</li><li>Image 2 sur 7.png</li><li>Image 3 sur 7.png</li><li>Image 4 sur 7.png</li><li>Image 5 sur 7.png</li><li>Image 6 sur 7.png</li><li>Image 7 sur 7.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c06">Votre site travaille-t-il vraiment pour vous sur mobile ? Le test prend 5 minutes.
+
+Votre offre est-elle immédiatement compréhensible ? Votre navigation est-elle intuitive ? Votre site est-il rapide et parfaitement adapté aux mobiles ?
+
+Si votre site ne répond pas à l’un de ces critères, il est peut-être temps de repenser votre expérience digitale. Profitez de notre diagnostic gratuit pour identifier les axes d’amélioration.
+
+Responsive · UX · Performance
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#SiteMobile #UX #Performance #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c06">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Does your website really work for you on mobile? The test takes 5 minutes: is your offer clear, is it easy to navigate, is it fast on a phone? If not, it may be time to rethink it. Use our free diagnostic to find what to improve. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s06"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p07">
+  <div class="post-head">
+    <div class="num">07</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel</span></div>
+      <h3>Neova Space reel</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 3 · Wed 28 Oct</span><span class="when-time">09:00 <small>Paris</small></span><span class="when-ind">13:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/cover_P07_NEOVA.jpg" alt="Post 07: Neova Space reel" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 07 - Projets - Reel Neova</p>
+        <ul><li>Reel.mp4</li><li>Couverture.png (cover)</li></ul>
+        <p class="tip">Type: <b>Reel</b>. Upload <b>Reel.mp4</b>, then set <b>Couverture.png</b> as the cover. Don't add music: it's already in the video. Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c07">NEOVA SPACE · PARIS
+
+LE DÉFI
+Présenter une offre complète (recherche, acquisition, rénovation, ameublement, gestion) et rassurer des clients parfois éloignés de Paris.
+
+NOTRE APPROCHE
+Un parcours digital structuré autour de trois étapes : trouver, transformer et gérer son bien immobilier. Une direction artistique épurée qui sublime les réalisations et met en valeur chaque détail architectural.
+
+L’EXPÉRIENCE
+Des transitions discrètes, des pages de service reliées aux réalisations, et une navigation directe.
+
+LE RÉSULTAT
+Une expérience fluide qui accompagne le visiteur de la découverte des services jusqu’à la prise de contact.
+
+Site éditorial · Direction artistique · Développement
+
+Explorer l’expérience → neovaspace.com
+
+NEON PIXELS® PARIS
+
+#NeovaSpace #ImmobilierParis #Renovation #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c07">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Neova Space, Paris. The challenge: present a full property service (search, purchase, renovation, furnishing, management) and reassure clients who live far from Paris. Our approach: a journey in three steps (find, transform, manage) with clean art direction. The result: a smooth path from the services to getting in touch. Ends with “Explore the experience → neovaspace.com”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s07"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p08">
+  <div class="post-head">
+    <div class="num">08</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Preuves</span><span class="tag">Single post</span></div>
+      <h3>Real Google review</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 3 · Wed 28 Oct</span><span class="when-time">12:30 <small>Paris</small></span><span class="when-ind">17:00 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P08.jpg" alt="Post 08: Real Google review" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 08 - Preuves - Avis Google</p>
+        <ul><li>Post.png</li></ul>
+        <p class="tip">Type: <b>Post</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c08">« Communication fluide, réactivité, délais respectés et surtout un vrai accompagnement du début à la fin. »
+Jean D., site de vente en ligne · Avis Google
+
+Merci à Jean pour sa confiance. Chez Neon Pixels, nous accordons autant d’importance à la qualité de nos réalisations qu’à l’accompagnement de nos clients, du premier échange jusqu’à la mise en ligne.
+
+5,0 sur Google · 6 avis
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#AvisClient #Temoignage #StudioDigital #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c08">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Jean D.&#x27;s Google review, word for word: “Smooth communication, responsiveness, deadlines met and above all real support from start to finish.” A thank-you to Jean, and a line on caring about support as much as quality. 5.0 on Google, 6 reviews. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s08"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p09">
+  <div class="post-head">
+    <div class="num">09</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Studio</span><span class="tag">Single post</span></div>
+      <h3>The standards of an independent studio</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 3 · Wed 28 Oct</span><span class="when-time">18:00 <small>Paris</small></span><span class="when-ind">22:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P09.jpg" alt="Post 09: The standards of an independent studio" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 09 - Studio - Fondateur</p>
+        <ul><li>Post.png</li></ul>
+        <p class="tip">Type: <b>Post</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c09">Chez Neon Pixels, vous échangez directement avec les personnes qui donnent vie à votre projet.
+
+Marco Bertoli a fondé le studio à Paris en 2024, après huit ans comme Lead Tech chez Hitachi. Il pilote chaque projet lui-même, du premier appel à la livraison, et s’entoure de spécialistes en UX/UI, 3D, animation ou SEO technique quand une mission le demande.
+
+Nous privilégions un accompagnement personnalisé et une attention particulière à chaque réalisation.
+
+Studio indépendant · 18 rue Bosquet, Paris 7e
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#Fondateur #StudioDigital #Paris #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c09">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> At Neon Pixels you talk directly with the people who build your project. Marco Bertoli founded the studio in Paris in 2024, after eight years as Lead Tech at Hitachi. He runs every project himself and brings in specialists when needed. Independent studio, 18 rue Bosquet, Paris 7e. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s09"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p10">
+  <div class="post-head">
+    <div class="num">10</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel</span></div>
+      <h3>Vision d&#x27;Avenir reel</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 4 · Thu 29 Oct</span><span class="when-time">09:00 <small>Paris</small></span><span class="when-ind">13:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/cover_P10_VISION.jpg" alt="Post 10: Vision d&#x27;Avenir reel" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 10 - Projets - Reel Vision</p>
+        <ul><li>Reel.mp4</li><li>Couverture.png (cover)</li></ul>
+        <p class="tip">Type: <b>Reel</b>. Upload <b>Reel.mp4</b>, then set <b>Couverture.png</b> as the cover. Don't add music: it's already in the video. Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c10">VISION D’AVENIR · PARIS
+
+LE DÉFI
+Faire vivre en ligne une boutique d’optique qui réunit de grandes maisons, pour une clientèle française et internationale.
+
+NOTRE APPROCHE
+Chaque maison dispose de son propre univers, tout en s’intégrant dans une expérience d’achat harmonieuse et intuitive. Des filtres par marque, catégorie et usage, et des fiches produit communes.
+
+L’EXPÉRIENCE
+Une navigation mobile intuitive permet de découvrir les collections et de trouver le modèle idéal en quelques instants.
+
+LE RÉSULTAT
+Une expérience e-commerce pensée pour rendre les collections accessibles partout, à tout moment.
+
+Site e-commerce · UX/UI · Développement
+
+Explorer l’expérience → visionavenir.fr
+
+NEON PIXELS® PARIS
+
+#VisionDAvenir #Ecommerce #UXUI #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c10">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Vision d&#x27;Avenir, Paris. The challenge: bring an eyewear shop with big brands online, for French and foreign customers. Our approach: each brand keeps its world inside one smooth shop, with filters by brand, category and use. The result: the collections are available anywhere, any time. Ends with “Explore the experience → visionavenir.fr”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s10"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p11">
+  <div class="post-head">
+    <div class="num">11</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Reel</span></div>
+      <h3>The 3D product demo</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 4 · Thu 29 Oct</span><span class="when-time">12:30 <small>Paris</small></span><span class="when-ind">17:00 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/cover_P11_NP3D.jpg" alt="Post 11: The 3D product demo" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 11 - Savoir-faire - Reel 3D</p>
+        <ul><li>Reel.mp4</li><li>Couverture.png (cover)</li></ul>
+        <p class="tip">Type: <b>Reel</b>. Upload <b>Reel.mp4</b>, then set <b>Couverture.png</b> as the cover. Don't add music: it's already in the video. Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c11">Et si vos clients pouvaient explorer vos produits en 3D ?
+
+La 3D en temps réel montre un produit sous tous les angles. Au fil du défilement, le produit prend vie à travers des animations interactives, directement depuis le navigateur.
+
+Notre approche : mettre l’innovation technologique au service de la présentation produit et de l’expérience utilisateur.
+
+3D · WebGL · Three.js · Animation au scroll
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#3D #WebGL #ThreeJS #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c11">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> What if your customers could explore your products in 3D? Real-time 3D shows a product from every angle, and it comes alive as you scroll, right in the browser. Our approach: technology that serves the product and the user. Ends with “See our work → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s11"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p12">
+  <div class="post-head">
+    <div class="num">12</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Méthode</span><span class="tag">Carousel · 7 images</span></div>
+      <h3>Behind the scenes, brief to site</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 4 · Thu 29 Oct</span><span class="when-time">18:00 <small>Paris</small></span><span class="when-ind">22:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P12_1.jpg" alt="Post 12: Behind the scenes, brief to site" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 12 - Methode - Carrousel Coulisses</p>
+        <ul><li>Image 1 sur 7.png</li><li>Image 2 sur 7.png</li><li>Image 3 sur 7.png</li><li>Image 4 sur 7.png</li><li>Image 5 sur 7.png</li><li>Image 6 sur 7.png</li><li>Image 7 sur 7.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c12">Derrière chaque expérience digitale réussie se cachent une réflexion stratégique, une direction artistique exigeante et un développement minutieux.
+
+Comprendre votre métier, dessiner la direction artistique, développer votre site tout en vous permettant de suivre son évolution grâce à une version de prévisualisation accessible en ligne, tester chaque écran, puis mettre en ligne. Vous êtes impliqué dans chaque étape clé, avec une visibilité complète sur l’avancement de votre projet.
+
+Cadrage · Design · Développement · Tests
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#Coulisses #Methode #CreationSiteWeb #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c12">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Behind every good digital experience: strategy, demanding art direction and careful development. We understand your business, design, build while you follow along on an online preview, test every screen, then launch. You&#x27;re involved at every key step. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s12"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p13">
+  <div class="post-head">
+    <div class="num">13</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Carousel · 7 images</span></div>
+      <h3>BMC Development case study</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 5 · Fri 30 Oct</span><span class="when-time">09:00 <small>Paris</small></span><span class="when-ind">13:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P13_1.jpg" alt="Post 13: BMC Development case study" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 13 - Projets - Carrousel BMC</p>
+        <ul><li>Image 1 sur 7.png</li><li>Image 2 sur 7.png</li><li>Image 3 sur 7.png</li><li>Image 4 sur 7.png</li><li>Image 5 sur 7.png</li><li>Image 6 sur 7.png</li><li>Image 7 sur 7.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c13">BMC DEVELOPMENT · LIBAN
+
+LE DÉFI
+Présenter des résidences d’exception à une clientèle internationale, grâce à une expérience immersive qui transcende les distances.
+
+NOTRE APPROCHE
+Chaque résidence bénéficie d’une présentation immersive qui révèle son architecture et son identité.
+
+L’EXPÉRIENCE
+Des transitions lentes entre les résidences, et un contact WhatsApp toujours à portée de main.
+
+LE RÉSULTAT
+Une première immersion dans l’univers de chaque propriété, avant même la visite physique.
+
+Site immersif · Direction artistique · Développement
+
+Découvrir le projet → bmcdevelopmentlb.com
+
+NEON PIXELS® PARIS
+
+#BMCDevelopment #SiteImmersif #Architecture #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c13">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> BMC Development, Lebanon. The challenge: present exceptional homes to buyers abroad, with an experience that makes distance disappear. The experience: slow transitions and WhatsApp always at hand. The result: a first feel for each property before the real visit. Ends with “See the project → bmcdevelopmentlb.com”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s13"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p14">
+  <div class="post-head">
+    <div class="num">14</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Preuves</span><span class="tag">Carousel · 4 images</span></div>
+      <h3>Google reviews</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 5 · Fri 30 Oct</span><span class="when-time">12:30 <small>Paris</small></span><span class="when-ind">17:00 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P14_1.jpg" alt="Post 14: Google reviews" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 14 - Preuves - Carrousel Avis Google</p>
+        <ul><li>Image 1 sur 4.png</li><li>Image 2 sur 4.png</li><li>Image 3 sur 4.png</li><li>Image 4 sur 4.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c14">Votre confiance, notre plus belle réussite.
+
+La satisfaction de nos clients est au cœur de notre engagement. Qualité des réalisations, réactivité et accompagnement personnalisé : découvrez leurs retours d’expérience. Merci à eux.
+
+Tous les avis sont sur la fiche Google de Neon Pixels.
+
+Avis clients · Google
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#AvisClients #Temoignages #StudioDigital #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c14">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Your trust, our greatest success. Client satisfaction is at the heart of what we do: quality, responsiveness and personal support. Read what clients say, thank you to them. All the reviews are on Neon Pixels&#x27; Google page. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s14"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+<article class="post" id="p15">
+  <div class="post-head">
+    <div class="num">15</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Studio</span><span class="tag">Carousel · 6 images</span></div>
+      <h3>Four commitments</h3>
+    </div>
+    <div class="when"><span class="when-day">Day 5 · Fri 30 Oct</span><span class="when-time">18:00 <small>Paris</small></span><span class="when-ind">22:30 India</span></div>
+  </div>
+  <div class="post-body">
+    <figure class="thumb"><img src="../m/P15_1.jpg" alt="Post 15: Four commitments" loading="lazy" width="640"></figure>
+    <div class="post-main">
+      <div class="files">
+        <h4>Files</h4>
+        <p class="path">Lancement / 15 - Studio - Carrousel Engagements</p>
+        <ul><li>Image 1 sur 6.png</li><li>Image 2 sur 6.png</li><li>Image 3 sur 6.png</li><li>Image 4 sur 6.png</li><li>Image 5 sur 6.png</li><li>Image 6 sur 6.png</li></ul>
+        <p class="tip">Type: <b>Carousel</b>. Add the images <b>in order, 1 → last</b>. Keep the original 3:4 shape (no square crop). Location: <b>Paris, France</b>.</p>
+      </div>
+      <div class="caption">
+        <h4>Caption (French, final: paste exactly)</h4>
+        <div class="copybox"><div class="cap" id="c15">Quatre engagements. Une même exigence.
+
+Comprendre votre activité avant de concevoir votre expérience digitale.
+Une alliance entre direction artistique et excellence technique.
+Des interactions pensées pour enrichir l’expérience utilisateur.
+Une expérience optimisée sur tous les supports.
+
+C’est la façon de travailler du studio, du premier appel à la mise en ligne.
+
+Studio indépendant · Paris
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#StudioDigital #Paris #Methode #WebDesign #NeonPixels</div><button type="button" class="copy" data-copy="c15">Copy caption</button></div>
+        <p class="meaning"><span>In English:</span> Four commitments, one standard: understand your business first; art direction and technical excellence together; interactions that improve the experience; a site that works on every device. That&#x27;s how the studio works, from first call to launch. Ends with “Get in touch → link in bio”.</p>
+      </div>
+      <label class="done"><input type="checkbox" data-key="s15"> Scheduled in Metricool</label>
+    </div>
+  </div>
+</article>
+</section>
+
+<section id="checks">
+  <div class="section-head"><div class="eyebrow">Monday 26 October</div><h2>Day 1 checks</h2></div>
+  <div class="panel">
+    <label class="done"><input type="checkbox" data-key="k1"> <span>After 09:00 Paris (13:30 India): post 01 is live as a reel, with the BMC cover.</span></label>
+    <label class="done"><input type="checkbox" data-key="k2"> <span>After 12:30 Paris (17:00 India): post 02 kept its tall 3:4 shape and wasn't cropped.</span></label>
+    <label class="done"><input type="checkbox" data-key="k3"> <span>Captions show their line breaks, and the location reads Paris, France.</span></label>
+    <p class="note">If one of these is wrong, pause the remaining posts in Metricool before 18:00 Paris and fix it first.</p>
+  </div>
+</section>
+
+<footer>Neon Pixels · Launch schedule · Captions from the final publishing guide (version of 14 October 2026). After the launch: 3 posts a week, Tuesday to Thursday.</footer>
+</div>
+<script>
+(function () {
+  var KEY = "np-launch-v1", state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
+  document.querySelectorAll("input[data-key]").forEach(function (box) {
+    box.checked = !!state[box.dataset.key];
+    box.addEventListener("change", function () {
+      state[box.dataset.key] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  function fallback(t) {
+    var a = document.createElement("textarea");
+    a.value = t; a.setAttribute("readonly", ""); a.style.position = "fixed"; a.style.opacity = "0";
+    document.body.appendChild(a); a.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(a);
+  }
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest("[data-copy]");
+    if (!b) return;
+    var t = document.getElementById(b.dataset.copy).textContent, label = b.textContent;
+    var done = function () { b.textContent = "Copied"; b.classList.add("ok"); setTimeout(function () { b.textContent = label; b.classList.remove("ok"); }, 1600); };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(done, function () { fallback(t); done(); });
+    } else { fallback(t); done(); }
+  });
+})();
+</script>
+</body>
+</html>
