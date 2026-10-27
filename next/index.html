@@ -59,6 +59,48 @@ header, section { display: flex; flex-direction: column; gap: 24px; }
 .ig .t.sk { outline: 2px solid var(--new); outline-offset: -2px; }
 .reels-row { display: grid; grid-template-columns: repeat(2, minmax(0, 132px)); gap: 8px; margin-top: 14px; }
 .reels-lab { font-size: 12px; color: #B5AFA5; margin-top: 16px; }
+/* iPhone profile mock-ups */
+.phones { display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); gap: 40px; justify-content: start; align-items: start; }
+.phone-col { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.phone-col h4 { margin: 0; }
+.iphone { width: 100%; background: #1B1B1D; border-radius: 54px; padding: 11px; box-shadow: 0 28px 60px rgba(0,0,0,0.22), inset 0 0 0 2px #3A3A3C; }
+.iscreen { background: #fff; color: #000; border-radius: 44px; overflow: hidden; height: 760px; display: flex; flex-direction: column; font-family: -apple-system, "SF Pro Text", "Inter", Helvetica, Arial, sans-serif; }
+.istatus { position: relative; flex: none; height: 46px; display: flex; align-items: center; justify-content: space-between; padding: 4px 28px 0 34px; font-weight: 600; font-size: 15px; }
+.island { position: absolute; left: 50%; top: 11px; transform: translateX(-50%); width: 108px; height: 30px; border-radius: 20px; background: #000; }
+.sicons { font-size: 10px; letter-spacing: 1px; }
+.iscroll { flex: 1; overflow-y: auto; scrollbar-width: none; overscroll-behavior: contain; }
+.iscroll::-webkit-scrollbar { display: none; }
+.ihead { display: flex; align-items: center; justify-content: space-between; padding: 6px 16px 8px; font-weight: 700; font-size: 17px; }
+.chev { font-size: 30px; font-weight: 300; line-height: 0.6; }
+.dots { font-size: 12px; letter-spacing: 1px; }
+.iprof { display: flex; align-items: center; gap: 16px; padding: 4px 16px 0; }
+.iav { width: 82px; height: 82px; flex: none; border-radius: 50%; background: #EFEBE4; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); display: grid; place-items: center; }
+.iname { font-weight: 600; font-size: 14.5px; line-height: 1.25; }
+.ibio { padding: 10px 16px 0; font-size: 13.5px; line-height: 1.38; }
+.ilink { display: flex; align-items: center; gap: 5px; color: #00376B; font-weight: 600; margin-top: 1px; }
+.ibtns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 12px 16px 0; }
+.ibtns span { background: #EFEFEF; border-radius: 9px; text-align: center; font-weight: 600; font-size: 13.5px; padding: 7px 0; }
+.ibtns span.f { background: #0095F6; color: #fff; }
+.ihl { display: flex; gap: 14px; padding: 14px 16px 2px; overflow: hidden; }
+.ihl div { flex: none; width: 66px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11.5px; }
+.ihl img { width: 62px; height: 62px; border-radius: 50%; box-shadow: 0 0 0 3px #fff, 0 0 0 4px #DBDBDB; margin-top: 4px; }
+.itabs { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 12px; border-bottom: 1px solid #DBDBDB; color: #8E8E8E; }
+.itabs span { display: grid; place-items: center; height: 44px; }
+.itabs span.on { color: #000; box-shadow: inset 0 -1.5px 0 #000; }
+.igrid, .ireels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; }
+.igrid > *, .ireels > * { min-width: 0; }
+.igrid .t { border-radius: 0; }
+.igrid .t.sk { outline: 2px solid var(--new); outline-offset: -2px; }
+.ri { position: absolute; right: 5px; top: 5px; width: 15px; height: 15px; filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); }
+.rr { position: relative; aspect-ratio: 9 / 16; overflow: hidden; background: #111; }
+.rr img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rr.sk { outline: 2px solid var(--new); outline-offset: -2px; }
+.rr .sk-in { justify-content: center; padding: 9cqw; }
+.rr .sk-h { font-size: 14cqw; }
+.rr .sk-sub { display: none; }
+.rr .sk-lab { font-size: 4.4cqw; }
+.scroll-hint { font-size: 13px; color: var(--muted); }
+@media (max-width: 860px) { .phones { grid-template-columns: minmax(0, 380px); } .iscreen { height: 700px; } }
 /* sketch tiles (indicative) */
 .sk { container-type: inline-size; }
 .sk-in { position: absolute; inset: 0; padding: 7cqw; display: flex; flex-direction: column; gap: 4cqw; }
@@ -163,20 +205,49 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </header>
 
 <section>
-  <h2>Why the grid stays intact</h2>
-  <div class="two">
-    <ol class="points">
-      <li>Instagram adds every new post to the <b>top left</b> of the grid and pushes all the others along by one tile.</li>
-      <li>The 15 launch posts make <b>5 full rows of 3</b>. Each row was designed as a set: the project post always sits on the right, and the rows alternate between light and dark.</li>
-      <li><b>Three new posts add exactly one full row on top</b>, so every launch row stays as designed.</li>
-      <li>Putting all five in the grid would push every row along by two tiles. Each designed row would be split over two lines, and the project posts would leave the right-hand column (see the comparison below).</li>
-      <li>So <b>posts 19 and 20 are reels published without a grid tile</b>. They go live on the account, appear in the profile’s Reels tab and can be shown in the Reels feed like any reel. They just don’t take a place in the grid.</li>
-      <li>The new row follows the same logic: <b>16, a project, on the right</b>; <b>17, a review, in the middle</b>, like 08 and 14; <b>18, the method, on the left</b>, like 12. It reads dark · light · dark, alternating with the row below it.</li>
-      <li>After that, three posts a week add one full row each week, so the grid stays aligned from then on.</li>
-    </ol>
-    <div class="phone" aria-label="The grid on Thursday 5 November">
-      <div class="phone-top"><b>neonpixels.fr</b><span>Grid on Thu 5 Nov · 18 tiles</span></div>
-      <div class="ig"><div class="t sk s-dark2"><div class="sk-in">
+  <h2>Your profile on Thursday 5 November</h2>
+  <p class="lead">All 20 posts are on the profile: 18 in the grid, from post 01 at the bottom to the new row on top, and the 2 extra reels in the Reels tab. The new posts have a gold outline.</p>
+  <div class="phones">
+    <div class="phone-col"><h4>Grid tab · 18 posts</h4><div class="iphone"><div class="iscreen"><div class="istatus"><span>9:41</span><span class="island"></span><span class="sicons">▂▄▆ ◔ ▭</span></div>
+<div class="iscroll"><div class="ihead"><span class="chev">‹</span><span>neonpixels.fr</span><span class="dots">•••</span></div>
+<div class="iprof"><div class="iav"><svg width="42" height="36" viewBox="-20 -20 807 698" aria-hidden="true"><path d="M 19 630 L 19 12 L 512 640 L 512 339 L 600 339 A 160.5 160.5 0 0 0 600 18 L 322 18" fill="none" stroke="#1C1D1F" stroke-width="32" stroke-linejoin="round"/><path d="M 203 413 L 356 599" fill="none" stroke="#B89A62" stroke-width="11" stroke-linecap="round"/></svg></div><div class="iname">NEON PIXELS® | Studio Paris</div></div>
+<div class="ibio" lang="fr">Sites web premium &amp; expériences immersives ✦<br>Design • 3D • Développement sur mesure<br>⭐ 5/5 sur Google<br>↓ Parlons de votre projet<div class="ilink"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="#00376B" stroke-width="2.4" stroke-linecap="round"/></svg>neonpixels.fr/#diagnostic</div></div>
+<div class="ibtns"><span class="f">Follow</span><span>Message</span><span>Contact</span></div>
+<div class="ihl"><div><img src="img/h1.jpg" alt="" width="132" height="132"><span>Projets</span></div><div><img src="img/h2.jpg" alt="" width="132" height="132"><span>Savoir-faire</span></div><div><img src="img/h3.jpg" alt="" width="132" height="132"><span>Méthode</span></div><div><img src="img/h4.jpg" alt="" width="132" height="132"><span>Studio</span></div><div><img src="img/h5.jpg" alt="" width="132" height="132"><span>Avis</span></div><div><img src="img/h6.jpg" alt="" width="132" height="132"><span>Diagnostic</span></div></div><div class="itabs"><span class="on"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M10 11.2v6l5-3z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 19c1.2-2.8 3.2-4 5.5-4s4.3 1.2 5.5 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span></div><div class="igrid"><div class="t sk s-dark2"><div class="sk-in">
+<div class="sk-lab"><span>MÉTHODE · DIAGNOSTIC NEON</span><span>01 / 06</span></div>
+<div class="sk-h">VOTRE PROJET MÉRITE UN PREMIER REGARD <em>D’EXPERT.</em></div>
+<div class="sk-sub">Comment se déroule le Diagnostic Neon, étape par étape.</div>
+<div class="sk-foot">GLISSEZ →</div></div><span class="tn new">18</span></div><div class="t sk s-light"><div class="sk-in">
+<div class="sk-lab"><span>PREUVES · AVIS GOOGLE</span></div>
+<div class="sk-q">“</div>
+<div class="sk-quote">L’avis choisi, cité mot pour mot depuis Google.</div>
+<div class="sk-auth">Prénom I. · Avis Google</div>
+<div class="sk-score"><b>5,0</b> ★★★★★</div></div><span class="tn new">17</span></div><div class="t sk s-dark"><div class="sk-in">
+<div class="sk-lab"><span>EXPÉRIENCE DIGITALE / 03</span><span>01 / 08</span></div>
+<div class="sk-h">PARIS, RÉVÉLÉ SUR <em>CHAQUE ÉCRAN.</em></div>
+<div class="sk-sub">Neova Space · Immobilier et rénovation · Site éditorial</div>
+<img class="sk-img" src="img/neo_window.jpg" alt="" width="600" height="410">
+<div class="sk-foot">DÉCOUVRIR LE PROJET →</div></div><span class="tn new">16</span></div><div class="t"><img src="img/g15.jpg" alt="Post 15" loading="lazy" width="360" height="480"><span class="tn">15</span></div><div class="t"><img src="img/g14.jpg" alt="Post 14" loading="lazy" width="360" height="480"><span class="tn">14</span></div><div class="t"><img src="img/g13.jpg" alt="Post 13" loading="lazy" width="360" height="480"><span class="tn">13</span></div><div class="t"><img src="img/g12.jpg" alt="Post 12" loading="lazy" width="360" height="480"><span class="tn">12</span></div><div class="t"><img src="img/g11.jpg" alt="Post 11" loading="lazy" width="360" height="480"><svg class="ri" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="2"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 11.2v6l5-3z" fill="#fff"/></svg><span class="tn">11</span></div><div class="t"><img src="img/g10.jpg" alt="Post 10" loading="lazy" width="360" height="480"><svg class="ri" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="2"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 11.2v6l5-3z" fill="#fff"/></svg><span class="tn">10</span></div><div class="t"><img src="img/g09.jpg" alt="Post 09" loading="lazy" width="360" height="480"><span class="tn">09</span></div><div class="t"><img src="img/g08.jpg" alt="Post 08" loading="lazy" width="360" height="480"><span class="tn">08</span></div><div class="t"><img src="img/g07.jpg" alt="Post 07" loading="lazy" width="360" height="480"><svg class="ri" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="2"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 11.2v6l5-3z" fill="#fff"/></svg><span class="tn">07</span></div><div class="t"><img src="img/g06.jpg" alt="Post 06" loading="lazy" width="360" height="480"><span class="tn">06</span></div><div class="t"><img src="img/g05.jpg" alt="Post 05" loading="lazy" width="360" height="480"><span class="tn">05</span></div><div class="t"><img src="img/g04.jpg" alt="Post 04" loading="lazy" width="360" height="480"><span class="tn">04</span></div><div class="t"><img src="img/g03.jpg" alt="Post 03" loading="lazy" width="360" height="480"><svg class="ri" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="2"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 11.2v6l5-3z" fill="#fff"/></svg><span class="tn">03</span></div><div class="t"><img src="img/g02.jpg" alt="Post 02" loading="lazy" width="360" height="480"><span class="tn">02</span></div><div class="t"><img src="img/g01.jpg" alt="Post 01" loading="lazy" width="360" height="480"><svg class="ri" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="2"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 11.2v6l5-3z" fill="#fff"/></svg><span class="tn">01</span></div></div></div></div></div><p class="scroll-hint">Scroll inside the phone to see the whole grid, down to post 01.</p></div>
+    <div class="phone-col"><h4>Reels tab · all 7 reels</h4><div class="iphone"><div class="iscreen"><div class="istatus"><span>9:41</span><span class="island"></span><span class="sicons">▂▄▆ ◔ ▭</span></div>
+<div class="iscroll"><div class="ihead"><span class="chev">‹</span><span>neonpixels.fr</span><span class="dots">•••</span></div>
+<div class="iprof"><div class="iav"><svg width="42" height="36" viewBox="-20 -20 807 698" aria-hidden="true"><path d="M 19 630 L 19 12 L 512 640 L 512 339 L 600 339 A 160.5 160.5 0 0 0 600 18 L 322 18" fill="none" stroke="#1C1D1F" stroke-width="32" stroke-linejoin="round"/><path d="M 203 413 L 356 599" fill="none" stroke="#B89A62" stroke-width="11" stroke-linecap="round"/></svg></div><div class="iname">NEON PIXELS® | Studio Paris</div></div>
+<div class="ibio" lang="fr">Sites web premium &amp; expériences immersives ✦<br>Design • 3D • Développement sur mesure<br>⭐ 5/5 sur Google<br>↓ Parlons de votre projet<div class="ilink"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="#00376B" stroke-width="2.4" stroke-linecap="round"/></svg>neonpixels.fr/#diagnostic</div></div>
+<div class="ibtns"><span class="f">Follow</span><span>Message</span><span>Contact</span></div>
+<div class="ihl"><div><img src="img/h1.jpg" alt="" width="132" height="132"><span>Projets</span></div><div><img src="img/h2.jpg" alt="" width="132" height="132"><span>Savoir-faire</span></div><div><img src="img/h3.jpg" alt="" width="132" height="132"><span>Méthode</span></div><div><img src="img/h4.jpg" alt="" width="132" height="132"><span>Studio</span></div><div><img src="img/h5.jpg" alt="" width="132" height="132"><span>Avis</span></div><div><img src="img/h6.jpg" alt="" width="132" height="132"><span>Diagnostic</span></div></div><div class="itabs"><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="on"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 8h19M9 2.5l3 5.5M15 2.5l3 5.5" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M10 11.2v6l5-3z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 19c1.2-2.8 3.2-4 5.5-4s4.3 1.2 5.5 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span></div><div class="ireels"><div class="rr sk s-dark2"><div class="sk-in">
+<div class="sk-lab"><span>SAVOIR-FAIRE · PRODUITS NUMÉRIQUES</span></div>
+<div class="sk-h">VOTRE ENTREPRISE, PILOTÉE DEPUIS <em>UN SEUL ESPACE.</em></div>
+<div class="sk-sub">Over the Pivoti interface, from the first frame.</div></div><span class="tn new">20</span><span class="play">▶</span></div><div class="rr sk s-dark"><div class="sk-in">
+<div class="sk-lab"><span>STUDIO NORÉLL · EXPÉRIENCE IMMERSIVE</span></div>
+<div class="sk-h">UNE COLLECTION QUI SE VISITE COMME <em>UN ATELIER.</em></div>
+<div class="sk-sub">Over the site itself, from the first frame.</div></div><span class="tn new">19</span><span class="play">▶</span></div><div class="rr"><img src="img/r11.jpg" alt="Reel 11" loading="lazy" width="270" height="480"><span class="tn">11</span></div><div class="rr"><img src="img/r10.jpg" alt="Reel 10" loading="lazy" width="270" height="480"><span class="tn">10</span></div><div class="rr"><img src="img/r07.jpg" alt="Reel 07" loading="lazy" width="270" height="480"><span class="tn">07</span></div><div class="rr"><img src="img/r03.jpg" alt="Reel 03" loading="lazy" width="270" height="480"><span class="tn">03</span></div><div class="rr"><img src="img/r01.jpg" alt="Reel 01" loading="lazy" width="270" height="480"><span class="tn">01</span></div></div></div></div></div><p class="scroll-hint">The 5 launch reels, plus the new 19 and 20.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>The whole grid at a glance</h2>
+  <div class="phone" aria-label="The full grid on Thursday 5 November" style="max-width:520px">
+    <div class="phone-top"><b>neonpixels.fr</b><span>Grid on Thu 5 Nov · 18 tiles</span></div>
+    <div class="ig"><div class="t sk s-dark2"><div class="sk-in">
 <div class="sk-lab"><span>MÉTHODE · DIAGNOSTIC NEON</span><span>01 / 06</span></div>
 <div class="sk-h">VOTRE PROJET MÉRITE UN PREMIER REGARD <em>D’EXPERT.</em></div>
 <div class="sk-sub">Comment se déroule le Diagnostic Neon, étape par étape.</div>
@@ -191,20 +262,33 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 <div class="sk-sub">Neova Space · Immobilier et rénovation · Site éditorial</div>
 <img class="sk-img" src="img/neo_window.jpg" alt="" width="600" height="410">
 <div class="sk-foot">DÉCOUVRIR LE PROJET →</div></div><span class="tn new">16</span></div><div class="t"><img src="img/g15.jpg" alt="Post 15" loading="lazy" width="360" height="480"><span class="tn">15</span></div><div class="t"><img src="img/g14.jpg" alt="Post 14" loading="lazy" width="360" height="480"><span class="tn">14</span></div><div class="t"><img src="img/g13.jpg" alt="Post 13" loading="lazy" width="360" height="480"><span class="tn">13</span></div><div class="t"><img src="img/g12.jpg" alt="Post 12" loading="lazy" width="360" height="480"><span class="tn">12</span></div><div class="t"><img src="img/g11.jpg" alt="Post 11" loading="lazy" width="360" height="480"><span class="tn">11</span></div><div class="t"><img src="img/g10.jpg" alt="Post 10" loading="lazy" width="360" height="480"><span class="tn">10</span></div><div class="t"><img src="img/g09.jpg" alt="Post 09" loading="lazy" width="360" height="480"><span class="tn">09</span></div><div class="t"><img src="img/g08.jpg" alt="Post 08" loading="lazy" width="360" height="480"><span class="tn">08</span></div><div class="t"><img src="img/g07.jpg" alt="Post 07" loading="lazy" width="360" height="480"><span class="tn">07</span></div><div class="t"><img src="img/g06.jpg" alt="Post 06" loading="lazy" width="360" height="480"><span class="tn">06</span></div><div class="t"><img src="img/g05.jpg" alt="Post 05" loading="lazy" width="360" height="480"><span class="tn">05</span></div><div class="t"><img src="img/g04.jpg" alt="Post 04" loading="lazy" width="360" height="480"><span class="tn">04</span></div><div class="t"><img src="img/g03.jpg" alt="Post 03" loading="lazy" width="360" height="480"><span class="tn">03</span></div><div class="t"><img src="img/g02.jpg" alt="Post 02" loading="lazy" width="360" height="480"><span class="tn">02</span></div><div class="t"><img src="img/g01.jpg" alt="Post 01" loading="lazy" width="360" height="480"><span class="tn">01</span></div></div>
-      <div class="reels-lab">Reels tab only (no grid tile)</div>
-      <div class="reels-row"><div class="r sk s-dark"><div class="sk-in">
+    <div class="reels-lab">Reels tab only (no grid tile)</div>
+    <div class="reels-row"><div class="r sk s-dark"><div class="sk-in">
 <div class="sk-lab"><span>STUDIO NORÉLL · EXPÉRIENCE IMMERSIVE</span></div>
 <div class="sk-h">UNE COLLECTION QUI SE VISITE COMME <em>UN ATELIER.</em></div>
 <div class="sk-sub">Over the site itself, from the first frame.</div></div><span class="tn new">19</span><span class="play">▶</span></div><div class="r sk s-dark2"><div class="sk-in">
 <div class="sk-lab"><span>SAVOIR-FAIRE · PRODUITS NUMÉRIQUES</span></div>
 <div class="sk-h">VOTRE ENTREPRISE, PILOTÉE DEPUIS <em>UN SEUL ESPACE.</em></div>
 <div class="sk-sub">Over the Pivoti interface, from the first frame.</div></div><span class="tn new">20</span><span class="play">▶</span></div></div>
-    </div>
   </div>
+</section>
 
-  <div class="minis">
-    <div class="mini"><h4>Our plan</h4><div class="mg"><span class="m-new">18</span><span class="m-new">17</span><span class="m-p">16</span><span class="m-o">15</span><span class="m-o">14</span><span class="m-p">13</span><span class="m-o">12</span><span class="m-o">11</span><span class="m-p">10</span><span class="m-o">9</span><span class="m-o">8</span><span class="m-p">7</span><span class="m-o">6</span><span class="m-o">5</span><span class="m-p">4</span><span class="m-o">3</span><span class="m-o">2</span><span class="m-p">1</span></div><p>18 tiles. Every project post (gold) stays in the right-hand column.</p></div>
-    <div class="mini"><h4>If all five went into the grid</h4><div class="mg"><span class="m-new">20</span><span class="m-p">19</span><span class="m-new">18</span><span class="m-new">17</span><span class="m-p">16</span><span class="m-o">15</span><span class="m-o">14</span><span class="m-p">13</span><span class="m-o">12</span><span class="m-o">11</span><span class="m-p">10</span><span class="m-o">9</span><span class="m-o">8</span><span class="m-p">7</span><span class="m-o">6</span><span class="m-o">5</span><span class="m-p">4</span><span class="m-o">3</span><span class="m-o">2</span><span class="m-p">1</span></div><p>20 tiles. Every row shifts by two and the projects end up in the middle.</p></div>
+<section>
+  <h2>Why the grid stays intact</h2>
+  <div class="two">
+    <ol class="points">
+      <li>Instagram adds every new post to the <b>top left</b> of the grid and pushes all the others along by one tile.</li>
+      <li>The 15 launch posts make <b>5 full rows of 3</b>. Each row was designed as a set: the project post always sits on the right, and the rows alternate between light and dark.</li>
+      <li><b>Three new posts add exactly one full row on top</b>, so every launch row stays as designed.</li>
+      <li>Putting all five in the grid would push every row along by two tiles. Each designed row would be split over two lines, and the project posts would leave the right-hand column (see the comparison).</li>
+      <li>So <b>posts 19 and 20 are reels published without a grid tile</b>. They go live on the account, appear in the profile’s Reels tab and can be shown in the Reels feed like any reel. They just don’t take a place in the grid.</li>
+      <li>The new row follows the same logic: <b>16, a project, on the right</b>; <b>17, a review, in the middle</b>, like 08 and 14; <b>18, the method, on the left</b>, like 12. It reads dark · light · dark, alternating with the row below it.</li>
+      <li>After that, three posts a week add one full row each week, so the grid stays aligned from then on.</li>
+    </ol>
+    <div class="minis">
+      <div class="mini"><h4>Our plan</h4><div class="mg"><span class="m-new">18</span><span class="m-new">17</span><span class="m-p">16</span><span class="m-o">15</span><span class="m-o">14</span><span class="m-p">13</span><span class="m-o">12</span><span class="m-o">11</span><span class="m-p">10</span><span class="m-o">9</span><span class="m-o">8</span><span class="m-p">7</span><span class="m-o">6</span><span class="m-o">5</span><span class="m-p">4</span><span class="m-o">3</span><span class="m-o">2</span><span class="m-p">1</span></div><p>18 tiles. Every project post (gold) stays in the right-hand column.</p></div>
+      <div class="mini"><h4>If all five went into the grid</h4><div class="mg"><span class="m-new">20</span><span class="m-p">19</span><span class="m-new">18</span><span class="m-new">17</span><span class="m-p">16</span><span class="m-o">15</span><span class="m-o">14</span><span class="m-p">13</span><span class="m-o">12</span><span class="m-o">11</span><span class="m-p">10</span><span class="m-o">9</span><span class="m-o">8</span><span class="m-p">7</span><span class="m-o">6</span><span class="m-o">5</span><span class="m-p">4</span><span class="m-o">3</span><span class="m-o">2</span><span class="m-p">1</span></div><p>20 tiles. Every row shifts by two and the projects end up in the middle.</p></div>
+    </div>
   </div>
 </section>
 
