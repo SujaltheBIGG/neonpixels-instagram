@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Neon Pixels · Next five posts</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151719'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='30' font-weight='700' fill='%23C9B48A' text-anchor='middle'%3E20%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #F1EEE7; --surface: #E6E1D8; --fg: #151719; --muted: #55575A; --line: rgba(21,23,25,0.14);
+  --accent: #8C774F; --sage: #6F7F6E; --new: #B89A62;
+  --display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 16px 80px; display: flex; flex-direction: column; gap: 72px; }
+@media (min-width: 700px) { .wrap { padding-inline: 24px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; text-wrap: balance; margin: 0; line-height: 0.95; }
+h1 { font-size: clamp(52px, 9vw, 96px); }
+h2 { font-size: clamp(36px, 5.5vw, 52px); }
+h3 { font-size: clamp(26px, 4vw, 34px); }
+h4 { margin: 0 0 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+h4 small { letter-spacing: 0.04em; text-transform: none; font-weight: 500; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); max-width: 62ch; }
+header, section { display: flex; flex-direction: column; gap: 24px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+.chip b { font-weight: 600; color: var(--accent); }
+.note { font-size: 14px; color: var(--muted); }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 40px; align-items: start; }
+.two > * { min-width: 0; }
+.phone { width: 100%; }
+.ig > * { min-width: 0; }
+.t img { max-width: 100%; }
+.points { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 62ch; }
+.points b { font-weight: 600; }
+/* phone-like grid */
+.phone { background: #0E0F10; border-radius: 18px; padding: 12px; color: #F1EEE7; }
+.phone-top { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 6px 12px; font-size: 13px; }
+.phone-top b { font-weight: 600; }
+.phone-top span { color: #B5AFA5; font-size: 12px; }
+.ig { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.t { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #222; }
+.t img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tn { position: absolute; left: 4px; bottom: 4px; font: 600 10px var(--body); background: rgba(14,15,16,0.72); color: #F1EEE7; padding: 2px 5px; border-radius: 3px; }
+.tn.new { background: var(--new); color: #151719; }
+.ig .t.sk { outline: 2px solid var(--new); outline-offset: -2px; }
+.reels-row { display: grid; grid-template-columns: repeat(2, minmax(0, 132px)); gap: 8px; margin-top: 14px; }
+.reels-lab { font-size: 12px; color: #B5AFA5; margin-top: 16px; }
+/* sketch tiles (indicative) */
+.sk { container-type: inline-size; }
+.sk-in { position: absolute; inset: 0; padding: 7cqw; display: flex; flex-direction: column; gap: 4cqw; }
+.s-dark { background: #1C1D1F; color: #F1EEE7; }
+.s-dark2 { background: #262728; color: #F1EEE7; }
+.s-light { background: #EFEBE4; color: #1C1D1F; }
+.sk-lab { display: flex; justify-content: space-between; font: 600 2.6cqw/1.2 var(--body); letter-spacing: 0.16em; opacity: 0.8; }
+.sk-h { font: 400 11cqw/0.95 var(--display); letter-spacing: 0.005em; margin-top: 3cqw; }
+.sk-h em { font-style: normal; color: #B89A62; }
+.sk-sub { font: 400 3.2cqw/1.35 var(--body); opacity: 0.8; }
+.sk-img { width: 100%; height: auto; margin-top: auto; border-radius: 1cqw; }
+.sk-foot { font: 600 2.6cqw var(--body); letter-spacing: 0.16em; margin-top: auto; padding-left: 10cqw; }
+.sk-img + .sk-foot { margin-top: 0; }
+.sk-q { font: 400 16cqw/0.6 Georgia, serif; color: #6F7F6E; margin-top: 5cqw; }
+.sk-quote { font: 500 5.4cqw/1.25 var(--body); }
+.sk-auth { font: 600 2.8cqw var(--body); letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; }
+.sk-score { font: 400 3.4cqw/1 var(--body); margin-top: auto; padding-bottom: 6cqw; }
+.sk-score b { font: 400 9cqw var(--display); margin-right: 2cqw; }
+.r { position: relative; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 6px; }
+.r .sk-in { justify-content: center; padding: 9cqw; }
+.r .sk-h { font-size: 14cqw; }
+.r .sk-sub { font-size: 4.2cqw; }
+.r .sk-lab { font-size: 3.6cqw; }
+.play { position: absolute; right: 6px; top: 6px; font-size: 11px; color: #F1EEE7; }
+/* mini diagrams */
+.minis { display: grid; grid-template-columns: repeat(2, minmax(0, 150px)); gap: 32px; }
+.mini h4 { margin-bottom: 8px; }
+.mg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.mg span { aspect-ratio: 3 / 4; display: grid; place-items: center; font: 600 10px var(--body); border-radius: 2px; }
+.m-o { background: var(--surface); color: var(--muted); }
+.m-new { background: transparent; border: 1px dashed var(--new); color: var(--muted); }
+.m-p { background: var(--accent); color: var(--bg); }
+.mini p { font-size: 13px; color: var(--muted); margin-top: 8px; }
+/* dates */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+td.time { white-space: nowrap; font-weight: 600; }
+td a { text-decoration: none; color: inherit; }
+td a b { color: var(--accent); }
+/* posts */
+.post { display: flex; flex-direction: column; gap: 22px; padding-top: 32px; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+.post-head { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+.num { font-family: var(--display); font-size: 84px; line-height: 0.8; color: var(--accent); }
+.post-title { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1 1 260px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; background: var(--surface); }
+.tag.pillar { background: var(--sage); color: var(--bg); }
+.tag.where { background: transparent; border: 1px solid var(--line); }
+.when { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.when-day { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.when-time { font-family: var(--display); font-size: 40px; line-height: 0.9; }
+.when-time small { font-family: var(--body); font-size: 12px; color: var(--muted); }
+.post-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: start; }
+.vis { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.vis .t { border-radius: 4px; }
+.vis-reel { max-width: 180px; }
+.vis figcaption { font-size: 12px; color: var(--muted); }
+.post-main { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.why { font-size: 15px; }
+.slides { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.slides li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; }
+.sl-n { font-family: var(--display); font-size: 22px; color: var(--accent); line-height: 1; }
+.sl-lab { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; color: var(--muted); }
+.sl-h { font-family: var(--display); font-size: 22px; line-height: 1.05; margin: 2px 0 4px; }
+.sl-b { font-size: 14px; }
+.sl-en { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.cap { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.5; padding: 14px; border: 1px solid var(--line); border-radius: 6px; }
+.meaning { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.meaning span { font-weight: 600; color: var(--fg); }
+.ask { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 4px; padding: 14px 16px; }
+.ask p { font-size: 15px; }
+.panel { background: var(--surface); border-radius: 6px; padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+.steps { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+@media (max-width: 820px) { .two { grid-template-columns: 1fr; } .phone { max-width: 420px; } }
+@media (max-width: 640px) {
+  .post-body { grid-template-columns: 1fr; }
+  .vis { max-width: 220px; }
+  .when { align-items: flex-start; width: 100%; flex-direction: row; gap: 12px; align-items: baseline; }
+  .when-time { font-size: 32px; }
+  .num { font-size: 68px; }
+  .minis { grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Neon Pixels · Instagram</div>
+  <h1>The next five posts</h1>
+  <p class="lead">Five more posts bring the profile to 20. Three of them form a new top row in the grid, and two are reels that live in the Reels tab. The 15 launch posts stay exactly where we planned them.</p>
+  <div class="chips">
+    <span class="chip"><b>20</b> posts in total</span>
+    <span class="chip"><b>1</b> new row in the grid</span>
+    <span class="chip"><b>2</b> reels in the Reels tab</span>
+    <span class="chip">Tue 3 → Thu 5 November</span>
+  </div>
+</header>
+
+<section>
+  <h2>Why the grid stays intact</h2>
+  <div class="two">
+    <ol class="points">
+      <li>Instagram adds every new post to the <b>top left</b> of the grid and pushes all the others along by one tile.</li>
+      <li>The 15 launch posts make <b>5 full rows of 3</b>. Each row was designed as a set: the project post always sits on the right, and the rows alternate between light and dark.</li>
+      <li><b>Three new posts add exactly one full row on top</b>, so every launch row stays as designed.</li>
+      <li>Putting all five in the grid would push every row along by two tiles. Each designed row would be split over two lines, and the project posts would leave the right-hand column (see the comparison below).</li>
+      <li>So <b>posts 19 and 20 are reels published without a grid tile</b>. They go live on the account, appear in the profile’s Reels tab and can be shown in the Reels feed like any reel. They just don’t take a place in the grid.</li>
+      <li>The new row follows the same logic: <b>16, a project, on the right</b>; <b>17, a review, in the middle</b>, like 08 and 14; <b>18, the method, on the left</b>, like 12. It reads dark · light · dark, alternating with the row below it.</li>
+      <li>After that, three posts a week add one full row each week, so the grid stays aligned from then on.</li>
+    </ol>
+    <div class="phone" aria-label="The grid on Thursday 5 November">
+      <div class="phone-top"><b>neonpixels.fr</b><span>Grid on Thu 5 Nov · 18 tiles</span></div>
+      <div class="ig"><div class="t sk s-dark2"><div class="sk-in">
+<div class="sk-lab"><span>MÉTHODE · DIAGNOSTIC NEON</span><span>01 / 06</span></div>
+<div class="sk-h">VOTRE PROJET MÉRITE UN PREMIER REGARD <em>D’EXPERT.</em></div>
+<div class="sk-sub">Comment se déroule le Diagnostic Neon, étape par étape.</div>
+<div class="sk-foot">GLISSEZ →</div></div><span class="tn new">18</span></div><div class="t sk s-light"><div class="sk-in">
+<div class="sk-lab"><span>PREUVES · AVIS GOOGLE</span></div>
+<div class="sk-q">“</div>
+<div class="sk-quote">L’avis choisi, cité mot pour mot depuis Google.</div>
+<div class="sk-auth">Prénom I. · Avis Google</div>
+<div class="sk-score"><b>5,0</b> ★★★★★</div></div><span class="tn new">17</span></div><div class="t sk s-dark"><div class="sk-in">
+<div class="sk-lab"><span>EXPÉRIENCE DIGITALE / 03</span><span>01 / 08</span></div>
+<div class="sk-h">PARIS, RÉVÉLÉ SUR <em>CHAQUE ÉCRAN.</em></div>
+<div class="sk-sub">Neova Space · Immobilier et rénovation · Site éditorial</div>
+<img class="sk-img" src="img/neo_window.jpg" alt="" width="600" height="410">
+<div class="sk-foot">DÉCOUVRIR LE PROJET →</div></div><span class="tn new">16</span></div><div class="t"><img src="img/g15.jpg" alt="Post 15" loading="lazy" width="360" height="480"><span class="tn">15</span></div><div class="t"><img src="img/g14.jpg" alt="Post 14" loading="lazy" width="360" height="480"><span class="tn">14</span></div><div class="t"><img src="img/g13.jpg" alt="Post 13" loading="lazy" width="360" height="480"><span class="tn">13</span></div><div class="t"><img src="img/g12.jpg" alt="Post 12" loading="lazy" width="360" height="480"><span class="tn">12</span></div><div class="t"><img src="img/g11.jpg" alt="Post 11" loading="lazy" width="360" height="480"><span class="tn">11</span></div><div class="t"><img src="img/g10.jpg" alt="Post 10" loading="lazy" width="360" height="480"><span class="tn">10</span></div><div class="t"><img src="img/g09.jpg" alt="Post 09" loading="lazy" width="360" height="480"><span class="tn">09</span></div><div class="t"><img src="img/g08.jpg" alt="Post 08" loading="lazy" width="360" height="480"><span class="tn">08</span></div><div class="t"><img src="img/g07.jpg" alt="Post 07" loading="lazy" width="360" height="480"><span class="tn">07</span></div><div class="t"><img src="img/g06.jpg" alt="Post 06" loading="lazy" width="360" height="480"><span class="tn">06</span></div><div class="t"><img src="img/g05.jpg" alt="Post 05" loading="lazy" width="360" height="480"><span class="tn">05</span></div><div class="t"><img src="img/g04.jpg" alt="Post 04" loading="lazy" width="360" height="480"><span class="tn">04</span></div><div class="t"><img src="img/g03.jpg" alt="Post 03" loading="lazy" width="360" height="480"><span class="tn">03</span></div><div class="t"><img src="img/g02.jpg" alt="Post 02" loading="lazy" width="360" height="480"><span class="tn">02</span></div><div class="t"><img src="img/g01.jpg" alt="Post 01" loading="lazy" width="360" height="480"><span class="tn">01</span></div></div>
+      <div class="reels-lab">Reels tab only (no grid tile)</div>
+      <div class="reels-row"><div class="r sk s-dark"><div class="sk-in">
+<div class="sk-lab"><span>STUDIO NORÉLL · EXPÉRIENCE IMMERSIVE</span></div>
+<div class="sk-h">UNE COLLECTION QUI SE VISITE COMME <em>UN ATELIER.</em></div>
+<div class="sk-sub">Over the site itself, from the first frame.</div></div><span class="tn new">19</span><span class="play">▶</span></div><div class="r sk s-dark2"><div class="sk-in">
+<div class="sk-lab"><span>SAVOIR-FAIRE · PRODUITS NUMÉRIQUES</span></div>
+<div class="sk-h">VOTRE ENTREPRISE, PILOTÉE DEPUIS <em>UN SEUL ESPACE.</em></div>
+<div class="sk-sub">Over the Pivoti interface, from the first frame.</div></div><span class="tn new">20</span><span class="play">▶</span></div></div>
+    </div>
+  </div>
+
+  <div class="minis">
+    <div class="mini"><h4>Our plan</h4><div class="mg"><span class="m-new">18</span><span class="m-new">17</span><span class="m-p">16</span><span class="m-o">15</span><span class="m-o">14</span><span class="m-p">13</span><span class="m-o">12</span><span class="m-o">11</span><span class="m-p">10</span><span class="m-o">9</span><span class="m-o">8</span><span class="m-p">7</span><span class="m-o">6</span><span class="m-o">5</span><span class="m-p">4</span><span class="m-o">3</span><span class="m-o">2</span><span class="m-p">1</span></div><p>18 tiles. Every project post (gold) stays in the right-hand column.</p></div>
+    <div class="mini"><h4>If all five went into the grid</h4><div class="mg"><span class="m-new">20</span><span class="m-p">19</span><span class="m-new">18</span><span class="m-new">17</span><span class="m-p">16</span><span class="m-o">15</span><span class="m-o">14</span><span class="m-p">13</span><span class="m-o">12</span><span class="m-o">11</span><span class="m-p">10</span><span class="m-o">9</span><span class="m-o">8</span><span class="m-p">7</span><span class="m-o">6</span><span class="m-o">5</span><span class="m-p">4</span><span class="m-o">3</span><span class="m-o">2</span><span class="m-p">1</span></div><p>20 tiles. Every row shifts by two and the projects end up in the middle.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Dates</h2>
+  <p class="note">All times are Paris time. The new row goes up in a single day, like the launch days, so the grid is only incomplete for a few hours.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Day</th><th>Time</th><th>Post</th><th>Where it appears</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3">Tuesday 3 November</td><td class="time">09:00</td><td><a href="#p16"><b>16</b> Neova Space case study</a></td><td>Grid, new row</td></tr>
+      <tr><td class="time">12:30</td><td><a href="#p17"><b>17</b> Google review</a></td><td>Grid, new row</td></tr>
+      <tr><td class="time">18:00</td><td><a href="#p18"><b>18</b> The Neon Diagnostic</a></td><td>Grid, new row (complete)</td></tr>
+      <tr><td>Wednesday 4 November</td><td class="time">12:30</td><td><a href="#p19"><b>19</b> Studio Noréll reel</a></td><td>Reels tab</td></tr>
+      <tr><td>Thursday 5 November</td><td class="time">12:30</td><td><a href="#p20"><b>20</b> Digital products reel</a></td><td>Reels tab</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>The five posts</h2>
+  <p class="note">Same rules as the launch: French first, reviews quoted word for word, no invented figures, and only your calls to action. New reels open directly on the hook, with no slow opening shot.</p>
+  
+<article class="post" id="p16">
+  <div class="post-head">
+    <div class="num">16</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Carousel · 8 images</span><span class="tag where">Grid · new top row, right</span></div>
+      <h3>Neova Space case study</h3>
+    </div>
+    <div class="when"><span class="when-day">Tue 3 Nov</span><span class="when-time">09:00 <small>Paris</small></span></div>
+  </div>
+  <div class="post-body">
+    <figure class="vis"><div class="t sk s-dark"><div class="sk-in">
+<div class="sk-lab"><span>EXPÉRIENCE DIGITALE / 03</span><span>01 / 08</span></div>
+<div class="sk-h">PARIS, RÉVÉLÉ SUR <em>CHAQUE ÉCRAN.</em></div>
+<div class="sk-sub">Neova Space · Immobilier et rénovation · Site éditorial</div>
+<img class="sk-img" src="img/neo_window.jpg" alt="" width="600" height="410">
+<div class="sk-foot">DÉCOUVRIR LE PROJET →</div></div><span class="tn new">16</span></div><figcaption>Sketch. Final visuals follow the approved text.</figcaption></figure>
+    <div class="post-main">
+      <p class="why">Neova is the only one of the three flagship projects without a case study. BMC and Vision d'Avenir each have a reel and a carousel; this gives Neova the same pair (reel 07 + carousel 16). Every fact below is already in approved post 07, the Neova reel.</p>
+      
+      <div><h4>Slides</h4><ol class="slides"><li><span class="sl-n">1</span><div><div class="sl-lab">EXPÉRIENCE DIGITALE / 03</div><div class="sl-h">PARIS, RÉVÉLÉ SUR CHAQUE ÉCRAN.</div><div class="sl-b">Neova Space · Immobilier et rénovation · Site éditorial</div><div class="sl-en">Paris, revealed on every screen. (The title of your earlier Neova reel.) Neova Space · Real estate and renovation · Editorial website</div></div></li><li><span class="sl-n">2</span><div><div class="sl-lab">PROJETS · LE PROJET</div><div class="sl-h">UN ACCOMPAGNEMENT IMMOBILIER COMPLET, À PARIS.</div><div class="sl-b">Recherche, acquisition, rénovation, ameublement et gestion : Neova Space accompagne ses clients à chaque étape de leur projet immobilier.</div><div class="sl-en">A complete real-estate service, in Paris. Search, purchase, renovation, furnishing and management: Neova Space supports its clients at every stage of their property project.</div></div></li><li><span class="sl-n">3</span><div><div class="sl-lab">PROJETS · LE DÉFI</div><div class="sl-h">UNE OFFRE COMPLÈTE, DES CLIENTS PARFOIS LOIN DE PARIS.</div><div class="sl-b">Il fallait présenter clairement l’ensemble des services et rassurer des acquéreurs qui ne vivent pas toujours à Paris.</div><div class="sl-en">A complete offer, clients sometimes far from Paris. The site had to present every service clearly and reassure buyers who don't always live in Paris.</div></div></li><li><span class="sl-n">4</span><div><div class="sl-lab">PROJETS · NOTRE APPROCHE</div><div class="sl-h">UN PARCOURS EN TROIS ÉTAPES.</div><div class="sl-b">Un parcours digital structuré autour de trois étapes : trouver, transformer et gérer son bien immobilier.</div><div class="sl-en">A journey in three steps. A digital journey built around three steps: find, transform and manage your property. (Approved line from post 07.)</div></div></li><li><span class="sl-n">5</span><div><div class="sl-lab">PROJETS · NOTRE APPROCHE</div><div class="sl-h">L’ARCHITECTURE AU PREMIER PLAN.</div><div class="sl-b">Une direction artistique épurée qui sublime les réalisations et met en valeur chaque détail architectural.</div><div class="sl-en">Architecture first. A refined art direction that enhances the projects and highlights every architectural detail. (Approved line from post 07.)</div></div></li><li><span class="sl-n">6</span><div><div class="sl-lab">PROJETS · CE QUI A CHANGÉ</div><div class="sl-h">UN SITE QUI ACCOMPAGNE JUSQU’AU PREMIER CONTACT.</div><div class="sl-b">Chaque page de service mène aux réalisations qui l’illustrent · Une navigation directe et des transitions discrètes · Le site parle français et anglais · Un parcours pensé jusqu’à la prise de contact</div><div class="sl-en">A site that guides visitors to the first contact. Each service page leads to the projects that illustrate it · Direct navigation and subtle transitions · The site speaks French and English · A journey designed all the way to the first contact.</div></div></li><li><span class="sl-n">7</span><div><div class="sl-lab">À RETENIR POUR VOTRE SITE</div><div class="sl-h">VOUS ACCOMPAGNEZ DES CLIENTS À DISTANCE ?</div><div class="sl-b">Découvrez comment cette approche pourrait s’adapter à votre activité.</div><div class="sl-en">Do you work with clients at a distance? See how this approach could adapt to your business.</div></div></li><li><span class="sl-n">8</span><div><div class="sl-lab">DIAGNOSTIC NEON</div><div class="sl-h">ÉCHANGEONS SUR VOTRE PROJET.</div><div class="sl-b">30 minutes en visio avec le studio · Une synthèse écrite de nos recommandations · Offert après étude de votre demande · LIEN EN BIO →</div><div class="sl-en">Let's talk about your project. The same closing card as the other carousels.</div></div></li></ol></div>
+      <div><h4>Caption <small>(French, final wording to approve)</small></h4><div class="cap" lang="fr">NEOVA SPACE · PARIS
+
+LE DÉFI
+Présenter une offre complète, de la recherche d’une propriété jusqu’à sa gestion, et rassurer des acquéreurs qui ne vivent pas toujours à Paris.
+
+NOTRE APPROCHE
+Un parcours digital structuré autour de trois étapes : trouver, transformer et gérer son bien immobilier. Une direction artistique épurée qui sublime les réalisations et met en valeur chaque détail architectural.
+
+L’EXPÉRIENCE
+Chaque page de service mène aux réalisations qui l’illustrent : le visiteur passe naturellement d’un savoir-faire à sa mise en œuvre.
+
+LE RÉSULTAT
+Un site éditorial, en français et en anglais, qui accompagne le visiteur de la découverte des services jusqu’à la prise de contact.
+
+Vous accompagnez des clients à distance ? Découvrez comment cette approche pourrait s’adapter à votre activité.
+
+Site éditorial · Direction artistique · Développement
+
+Explorer l’expérience → neovaspace.com
+
+NEON PIXELS® PARIS
+
+#NeovaSpace #ImmobilierParis #Renovation #WebDesign #NeonPixels</div>
+      <p class="meaning"><span>In English:</span> Neova Space · Paris. The challenge: present a complete offer, from finding a property to managing it, and reassure buyers who don't always live in Paris. Our approach: the three-step journey and the refined art direction (your approved lines). The experience: every service page leads to the projects that show it. The result: an editorial site, in French and English, that takes visitors from the services to getting in touch. Then the question for readers, the services line, the link to neovaspace.com and the hashtags.</p></div>
+      
+    </div>
+  </div>
+</article>
+<article class="post" id="p17">
+  <div class="post-head">
+    <div class="num">17</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Preuves</span><span class="tag">Single post</span><span class="tag where">Grid · new top row, middle</span></div>
+      <h3>A Google review not published yet</h3>
+    </div>
+    <div class="when"><span class="when-day">Tue 3 Nov</span><span class="when-time">12:30 <small>Paris</small></span></div>
+  </div>
+  <div class="post-body">
+    <figure class="vis"><div class="t sk s-light"><div class="sk-in">
+<div class="sk-lab"><span>PREUVES · AVIS GOOGLE</span></div>
+<div class="sk-q">“</div>
+<div class="sk-quote">L’avis choisi, cité mot pour mot depuis Google.</div>
+<div class="sk-auth">Prénom I. · Avis Google</div>
+<div class="sk-score"><b>5,0</b> ★★★★★</div></div><span class="tn new">17</span></div><figcaption>Sketch. Final visuals follow the approved text.</figcaption></figure>
+    <div class="post-main">
+      <p class="why">Same place in the grid as the other proof posts (08 and 14 sit in the middle column). Three of your Google reviews are already on the profile; this uses one of the others.</p>
+      
+      <div><h4>The image</h4><ol class="slides"><li><span class="sl-n">1</span><div><div class="sl-lab">PREUVES · AVIS GOOGLE</div><div class="sl-h">« [The review you choose, word for word] »</div><div class="sl-b">[First name and initial] · [type of project] · Avis Google — 5,0 ★★★★★ Note moyenne sur Google · [number] avis</div><div class="sl-en">The review is quoted exactly as written on Google, in its original language, like posts 08 and 14.</div></div></li></ol></div>
+      <div><h4>Caption <small>(French, final wording to approve)</small></h4><div class="cap" lang="fr">« [L’avis choisi, cité mot pour mot] »
+[Prénom initiale.], [type de projet] · Avis Google
+
+Merci à [Prénom] pour ce retour. Chaque projet est mené avec la même exigence : une expérience digitale soignée et un accompagnement attentif, de la première réflexion jusqu’à la mise en ligne.
+
+5,0 sur Google · [nombre] avis
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#AvisClient #Confiance #StudioDigital #WebDesign #NeonPixels</div>
+      <p class="meaning"><span>In English:</span> The review, word for word, and who wrote it. Then: thank you to [name] for this feedback; every project is led with the same high standards: a carefully crafted digital experience and attentive support, from the first idea to the launch. Then the Google rating, the call to action and the hashtags.</p></div>
+      <div class="ask"><h4>Question for you</h4><p>Which of the reviews not yet published should we use? We'll quote it word for word and re-check the total number of reviews on the day.</p></div>
+    </div>
+  </div>
+</article>
+<article class="post" id="p18">
+  <div class="post-head">
+    <div class="num">18</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Méthode</span><span class="tag">Carousel · 6 images</span><span class="tag where">Grid · new top row, left</span></div>
+      <h3>The Neon Diagnostic, step by step</h3>
+    </div>
+    <div class="when"><span class="when-day">Tue 3 Nov</span><span class="when-time">18:00 <small>Paris</small></span></div>
+  </div>
+  <div class="post-body">
+    <figure class="vis"><div class="t sk s-dark2"><div class="sk-in">
+<div class="sk-lab"><span>MÉTHODE · DIAGNOSTIC NEON</span><span>01 / 06</span></div>
+<div class="sk-h">VOTRE PROJET MÉRITE UN PREMIER REGARD <em>D’EXPERT.</em></div>
+<div class="sk-sub">Comment se déroule le Diagnostic Neon, étape par étape.</div>
+<div class="sk-foot">GLISSEZ →</div></div><span class="tn new">18</span></div><figcaption>Sketch. Final visuals follow the approved text.</figcaption></figure>
+    <div class="post-main">
+      <p class="why">Every post ends on the free Diagnostic, so this one shows exactly what it includes. All the details come from the Diagnostic section of neonpixels.fr.</p>
+      
+      <div><h4>Slides</h4><ol class="slides"><li><span class="sl-n">1</span><div><div class="sl-lab">MÉTHODE · DIAGNOSTIC NEON</div><div class="sl-h">VOTRE PROJET MÉRITE UN PREMIER REGARD D’EXPERT.</div><div class="sl-b">Comment se déroule le Diagnostic Neon, étape par étape. GLISSEZ →</div><div class="sl-en">Your project deserves a first expert look. How the Neon Diagnostic works, step by step. Swipe →</div></div></li><li><span class="sl-n">2</span><div><div class="sl-lab">MÉTHODE · ÉTAPE 1 SUR 4</div><div class="sl-h">01 · VOTRE DEMANDE</div><div class="sl-b">Vous nous présentez votre activité et votre projet. Chaque demande est étudiée avant de vous proposer un échange.</div><div class="sl-en">Your request. You tell us about your business and your project. Each request is reviewed before we suggest a call.</div></div></li><li><span class="sl-n">3</span><div><div class="sl-lab">MÉTHODE · ÉTAPE 2 SUR 4</div><div class="sl-h">02 · 30 MINUTES EN VISIO</div><div class="sl-b">Un échange direct avec le studio pour comprendre vos objectifs et vos priorités.</div><div class="sl-en">30 minutes by video. A direct conversation with the studio to understand your goals and priorities.</div></div></li><li><span class="sl-n">4</span><div><div class="sl-lab">MÉTHODE · ÉTAPE 3 SUR 4</div><div class="sl-h">03 · UNE SYNTHÈSE ÉCRITE</div><div class="sl-b">Après l’échange, vous recevez par écrit vos priorités et nos recommandations.</div><div class="sl-en">A written summary. After the call, you receive your priorities and our recommendations in writing.</div></div></li><li><span class="sl-n">5</span><div><div class="sl-lab">MÉTHODE · ÉTAPE 4 SUR 4</div><div class="sl-h">04 · UNE PROPOSITION SUR MESURE</div><div class="sl-b">Si vous souhaitez aller plus loin, nous vous adressons une proposition détaillée : périmètre, calendrier et budget.</div><div class="sl-en">A tailored proposal. If you'd like to go further, we send you a detailed proposal: scope, timeline and budget.</div></div></li><li><span class="sl-n">6</span><div><div class="sl-lab">DIAGNOSTIC NEON</div><div class="sl-h">ÉCHANGEONS SUR VOTRE PROJET.</div><div class="sl-b">Une première réponse sous trois jours ouvrés · 30 minutes en visio avec le studio · Offert après étude de votre demande · LIEN EN BIO →</div><div class="sl-en">Let's talk about your project. A first reply within three working days · 30 minutes by video with the studio · Free after we review your request.</div></div></li></ol></div>
+      <div><h4>Caption <small>(French, final wording to approve)</small></h4><div class="cap" lang="fr">Avant de lancer votre projet, prenons le temps de le comprendre.
+
+Le Diagnostic Neon commence par l’étude de votre demande. Nous échangeons ensuite 30 minutes en visio sur vos objectifs et vos priorités, puis vous recevez une synthèse écrite de nos recommandations.
+
+Si vous souhaitez aller plus loin, nous vous adressons une proposition sur mesure : périmètre, calendrier et budget. Une première réponse vous parvient sous trois jours ouvrés.
+
+Le diagnostic est offert après étude de votre demande.
+
+Diagnostic · Stratégie · Recommandations
+
+Prendre contact → lien en bio
+
+NEON PIXELS® PARIS
+
+#DiagnosticNeon #StrategieDigitale #CreationSiteWeb #WebDesign #NeonPixels</div>
+      <p class="meaning"><span>In English:</span> Before you launch your project, let's take the time to understand it. The Neon Diagnostic starts with a review of your request; then a 30-minute video call about your goals and priorities; then a written summary of our recommendations. If you want to go further, we send a tailored proposal (scope, timeline, budget). You get a first reply within three working days. The Diagnostic is free after we review your request.</p></div>
+      <div class="ask"><h4>Question for you</h4><p>Please confirm these details still match the Diagnostic as you run it today.</p></div>
+    </div>
+  </div>
+</article>
+<article class="post" id="p19">
+  <div class="post-head">
+    <div class="num">19</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Projets</span><span class="tag">Reel</span><span class="tag where">Reels tab only (not in the grid)</span></div>
+      <h3>Studio Noréll</h3>
+    </div>
+    <div class="when"><span class="when-day">Wed 4 Nov</span><span class="when-time">12:30 <small>Paris</small></span></div>
+  </div>
+  <div class="post-body">
+    <figure class="vis vis-reel"><div class="r sk s-dark"><div class="sk-in">
+<div class="sk-lab"><span>STUDIO NORÉLL · EXPÉRIENCE IMMERSIVE</span></div>
+<div class="sk-h">UNE COLLECTION QUI SE VISITE COMME <em>UN ATELIER.</em></div>
+<div class="sk-sub">Over the site itself, from the first frame.</div></div><span class="tn new">19</span><span class="play">▶</span></div><figcaption>Sketch. Final visuals follow the approved text.</figcaption></figure>
+    <div class="post-main">
+      <p class="why">A project from neonpixels.fr that isn't on Instagram yet. Its site is very visual (you explore the pieces, tap one, or take the guided tour), which suits a reel.</p>
+      <p class="note">Published with “show in the grid” turned off: it goes live on the account and sits in the Reels tab, without taking a tile in the grid.</p>
+      <div><h4>On-screen text</h4><ol class="slides"><li><span class="sl-n">1</span><div><div class="sl-lab">STUDIO NORÉLL · EXPÉRIENCE IMMERSIVE</div><div class="sl-h">UNE COLLECTION QUI SE VISITE COMME UN ATELIER.</div><div class="sl-b">On screen from the very first frame, over the site itself. No person shot. Then: exploring the pieces, opening one, the guided tour, and the Neon Pixels end card with the Neon Pulse sound.</div><div class="sl-en">A collection you visit like a workshop.</div></div></li></ol></div>
+      <div><h4>Caption <small>(French, final wording to approve)</small></h4><div class="cap" lang="fr">STUDIO NORÉLL · MOBILIER DE COLLECTION
+
+Une collection qui se visite comme un atelier.
+
+Pour un atelier de mobilier de collection, nous avons imaginé une expérience immersive : le visiteur explore les pièces librement, les découvre une à une ou se laisse guider par la visite.
+
+Chaque création est présentée avec ses matières, du chêne huilé au travertin.
+
+Expérience immersive · Direction artistique · Développement
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#MobilierDeCollection #ExperienceImmersive #DesignInterieur #WebDesign #NeonPixels</div>
+      <p class="meaning"><span>In English:</span> Studio Noréll · collectible furniture. A collection you visit like a workshop. For a collectible-furniture atelier, we imagined an immersive experience: visitors explore the pieces freely, discover them one by one, or follow the guided tour. Each piece is shown with its materials, from oiled oak to travertine.</p></div>
+      <div class="ask"><h4>Question for you</h4><p>Is Studio Noréll a client project or a studio concept? If it's a concept, we'll say so, as we did for the 3D demo.</p></div>
+    </div>
+  </div>
+</article>
+<article class="post" id="p20">
+  <div class="post-head">
+    <div class="num">20</div>
+    <div class="post-title">
+      <div class="meta"><span class="tag pillar">Savoir-faire</span><span class="tag">Reel</span><span class="tag where">Reels tab only (not in the grid)</span></div>
+      <h3>Beyond websites: digital products (Pivoti)</h3>
+    </div>
+    <div class="when"><span class="when-day">Thu 5 Nov</span><span class="when-time">12:30 <small>Paris</small></span></div>
+  </div>
+  <div class="post-body">
+    <figure class="vis vis-reel"><div class="r sk s-dark2"><div class="sk-in">
+<div class="sk-lab"><span>SAVOIR-FAIRE · PRODUITS NUMÉRIQUES</span></div>
+<div class="sk-h">VOTRE ENTREPRISE, PILOTÉE DEPUIS <em>UN SEUL ESPACE.</em></div>
+<div class="sk-sub">Over the Pivoti interface, from the first frame.</div></div><span class="tn new">20</span><span class="play">▶</span></div><figcaption>Sketch. Final visuals follow the approved text.</figcaption></figure>
+    <div class="post-main">
+      <p class="why">« Produits numériques » is one of the five services on neonpixels.fr, and no post covers it yet. Pivoti, listed on your site as a business platform, shows it.</p>
+      <p class="note">Published with “show in the grid” turned off: it goes live on the account and sits in the Reels tab, without taking a tile in the grid.</p>
+      <div><h4>On-screen text</h4><ol class="slides"><li><span class="sl-n">1</span><div><div class="sl-lab">SAVOIR-FAIRE · PRODUITS NUMÉRIQUES</div><div class="sl-h">VOTRE ENTREPRISE, PILOTÉE DEPUIS UN SEUL ESPACE.</div><div class="sl-b">On screen from the very first frame, over the Pivoti interface. No person shot. Then: projects, finances, documents and teams in one place, and the Neon Pixels end card.</div><div class="sl-en">Your business, run from a single space.</div></div></li></ol></div>
+      <div><h4>Caption <small>(French, final wording to approve)</small></h4><div class="cap" lang="fr">Votre entreprise, pilotée depuis un seul espace.
+
+Au-delà des sites, le studio conçoit des produits numériques : plateformes métier et applications. Pivoti en est un exemple : projets, finances, documents, équipes, clients et fournisseurs y sont réunis, pour une entreprise comme pour un groupe entier.
+
+Nous y apportons la même exigence que sur un site : une interface claire, une direction artistique soignée et un développement minutieux.
+
+Produits numériques · UX/UI · Développement
+
+Découvrir nos réalisations → lien en bio
+
+NEON PIXELS® PARIS
+
+#ProduitNumerique #PlateformeMetier #UXUI #WebDesign #NeonPixels</div>
+      <p class="meaning"><span>In English:</span> Your business, run from a single space. Beyond websites, the studio designs digital products: business platforms and apps. Pivoti is one example: projects, finances, documents, teams, clients and suppliers in one place, for one company or a whole group. We bring the same standards as on a website: a clear interface, careful art direction and meticulous development.</p></div>
+      <div class="ask"><h4>Question for you</h4><p>What did the studio do on Pivoti (design, development, or both), and is it fine to show its screens? We'll adjust the caption to match.</p></div>
+    </div>
+  </div>
+</article>
+</section>
+
+<section>
+  <div class="panel">
+    <h2>What we need from you</h2>
+    <ol class="steps">
+      <li><b>Your OK on the text</b> above, or your corrections. We apply them word for word.</li>
+      <li><b>Post 17:</b> which of the reviews not yet published to use.</li>
+      <li><b>Post 18:</b> that the Diagnostic details still match how you run it.</li>
+      <li><b>Post 19:</b> whether Studio Noréll is a client project or a studio concept.</li>
+      <li><b>Post 20:</b> what the studio did on Pivoti, and that its screens can be shown.</li>
+    </ol>
+    <p>To keep Tuesday 3 November, we need your reply by <b>Friday 30 October</b>. Then we produce the visuals and reels and schedule all five.</p>
+  </div>
+</section>
+
+<footer>Neon Pixels · Instagram · next five posts · prepared 27 October 2026 · <a href="../planning/">launch schedule</a></footer>
+</div>
+</body>
+</html>
