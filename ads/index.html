@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Neon Pixels · Meta ads plan</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151719'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='26' font-weight='700' fill='%23C9B48A' text-anchor='middle'%3EADS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #F1EEE7; --surface: #E6E1D8; --fg: #151719; --muted: #55575A; --line: rgba(21,23,25,0.14);
+  --accent: #8C774F; --sage: #6F7F6E; --warn: #9A5B3C;
+  --display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; --warn: #D99A78; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; --warn: #D99A78; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 16px 80px; display: flex; flex-direction: column; gap: 72px; }
+@media (min-width: 700px) { .wrap { padding-inline: 24px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; text-wrap: balance; margin: 0; line-height: 0.95; }
+h1 { font-size: clamp(52px, 9vw, 96px); }
+h2 { font-size: clamp(36px, 5.5vw, 52px); }
+h3 { font-size: clamp(24px, 3.6vw, 30px); }
+h4 { margin: 0 0 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); max-width: 64ch; }
+header, section { display: flex; flex-direction: column; gap: 24px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+.chip b { font-weight: 600; color: var(--accent); }
+.chip.hold b { color: var(--warn); }
+.note { font-size: 14px; color: var(--muted); }
+.points { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.points b { font-weight: 600; }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.card { background: var(--surface); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.card ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+.card.no h4 { color: var(--warn); }
+.card.yes h4 { color: var(--sage); }
+.opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.opt { border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.opt .n { font-family: var(--display); font-size: 40px; line-height: 0.8; color: var(--accent); }
+.opt q { display: block; quotes: none; font-style: italic; border-left: 3px solid var(--accent); padding-left: 12px; }
+.tag { align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 9px; border-radius: 3px; background: var(--surface); }
+.reco { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 4px; padding: 16px 18px; }
+.reco b { font-weight: 600; }
+.dont { border: 1px solid var(--warn); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.dont h3 { color: var(--warn); }
+.funnel { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.funnel span { background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500; }
+.funnel i { font-style: normal; color: var(--accent); font-weight: 600; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: 14px; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+td b { font-weight: 600; }
+.timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.step { border-top: 3px solid var(--accent); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.step h4 { margin: 0; color: var(--accent); }
+.step ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.check { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; }
+.check li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; font-size: 15px; }
+.check li::before { content: ""; width: 16px; height: 16px; border: 1.5px solid var(--muted); border-radius: 3px; margin-top: 3px; }
+.check li small { display: block; color: var(--muted); font-size: 13px; }
+.qs { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; max-width: 74ch; }
+.qgroup { display: flex; flex-direction: column; gap: 10px; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+@media (max-width: 720px) {
+  .cols, .opts, .timeline, .check { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Neon Pixels · Meta ads</div>
+  <h1>Meta ads: the blocker and the plan</h1>
+  <p class="lead">Where the ads stand today, what is blocking them, the safe ways to unblock them, and the plan we launch the day they can run.</p>
+  <div class="chips">
+    <span class="chip hold"><b>On hold</b> · blocked by Meta, not by the campaign</span>
+    <span class="chip"><b>Ready</b> · a clean Neon Pixels ad account</span>
+    <span class="chip"><b>Ready</b> · plan, creatives and tracking checklist</span>
+  </div>
+</header>
+
+<section>
+  <h2>The blocker, in plain words</h2>
+  <ol class="points">
+    <li>Meta has <b>limited Marco’s personal Facebook profile</b> because three older ad accounts in his name have <b>unpaid balances</b>.</li>
+    <li>The Neon Pixels Instagram (@neonpixels.fr) is linked to Marco’s profile. So it <b>can’t be connected to the Neon Pixels business account</b>, whoever tries.</li>
+    <li>We tried twice, by two different routes. Meta answered “unknown error”, then “Business Account Not Allowed to Advertise”.</li>
+    <li>Meta’s own assistant confirmed to Marco that this is what limits his profile, and so the Instagram connection.</li>
+    <li>Everything else is clean: the Neon Pixels business, its ad account (EUR, Paris time) and our own profile show <b>no advertising issues</b>. The Instagram account itself is healthy, with no restrictions.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>What it blocks, and what it doesn’t</h2>
+  <div class="cols">
+    <div class="card no">
+      <h4>Blocked today</h4>
+      <ul>
+        <li>Connecting @neonpixels.fr to the Neon Pixels business account</li>
+        <li>Ads that show as @neonpixels.fr</li>
+        <li>An automatic “DIAGNOSTIC” reply in the Business Suite inbox</li>
+        <li>Possibly any ads from the Neon Pixels ad account. <b>Only Meta can confirm this</b> (option 1 below).</li>
+      </ul>
+    </div>
+    <div class="card yes">
+      <h4>Not blocked</h4>
+      <ul>
+        <li>The Instagram account itself: a healthy Business account</li>
+        <li>Posting and scheduling: the 15 launch posts are live, and 5 more are scheduled for 3–5 November</li>
+        <li>Preparing the ads, creatives and tracking in advance</li>
+        <li>Google Ads, which Meta’s limits don’t touch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How to unblock it</h2>
+  <div class="opts">
+    <div class="opt">
+      <span class="n">1</span>
+      <h3>Ask Meta one precise question</h3>
+      <span class="tag">Today · free</span>
+      <q>Can the NEON Pixels business run ads from its own ad account, with a new card, while my older ad accounts have unpaid balances?</q>
+      <p>If the answer is yes, ads can start under the Facebook Page name while the Instagram link waits.</p>
+    </div>
+    <div class="opt">
+      <span class="n">2</span>
+      <h3>Ask Meta how to connect Instagram another way</h3>
+      <span class="tag">Same conversation</span>
+      <q>Can another admin of the NEON Pixels business connect @neonpixels.fr to the business, while my profile is limited?</q>
+      <p>Asked to Meta directly, so nothing is done that Meta could see as getting around its limits. If yes, the ads can run as @neonpixels.fr.</p>
+    </div>
+    <div class="opt">
+      <span class="n">3</span>
+      <h3>Google Ads in the meantime</h3>
+      <span class="tag">Optional · separate budget</span>
+      <p>Not affected by Meta. It reaches people who are already searching for a web studio in Paris, and sends them to the free Diagnostic.</p>
+    </div>
+    <div class="opt">
+      <span class="n">4</span>
+      <h3>Keep Instagram growing</h3>
+      <span class="tag">Already running</span>
+      <p>Three posts a week, so the profile the ads will send people to keeps getting stronger.</p>
+    </div>
+  </div>
+  <p class="reco"><b>Our recommendation:</b> ask Meta questions 1 and 2 now, in one conversation. If Meta says yes to either, we start a small test straight away. If Meta says no to both, we start with Google Ads while Instagram keeps growing.</p>
+</section>
+
+<section>
+  <div class="dont">
+    <h3>What we won’t do, and why</h3>
+    <ul class="points">
+      <li><b>No new ad accounts, business accounts or Instagram accounts to get around Meta’s limits.</b> Meta treats this as circumvention. It doesn’t fix the Instagram link, and it can get the new accounts and everyone’s profiles restricted: Victor’s, Marco’s and ours.</li>
+      <li><b>No VPNs and no logins from other countries</b> on the Neon Pixels accounts. They trigger Meta’s security checks.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>The ads plan, once they can run</h2>
+  <div>
+    <h4>The path for every visitor</h4>
+    <div class="funnel"><span>Ad</span><i>→</i><span>Instagram profile or website</span><i>→</i><span>Free Diagnostic Neon request</span><i>→</i><span>Fast reply</span><i>→</i><span>Call</span><i>→</i><span>Proposal</span></div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Campaign</th><th>Who sees it</th><th>Test budget</th><th>Goal</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 · New people</b></td><td>Paris and Île-de-France, French speakers, broad targeting</td><td>About €20–30 a day</td><td>Diagnostic requests</td></tr>
+      <tr><td><b>2 · Warm people</b></td><td>People who visited the site or engaged with the page and profile</td><td>About €5–10 a day</td><td>Bring them back to request a Diagnostic</td></tr>
+    </tbody>
+  </table></div>
+  <div class="cols">
+    <div class="card">
+      <h4>Creative</h4>
+      <ul>
+        <li>Made from our posts and reels, so ads and profile look like one brand</li>
+        <li>9:16 and 4:5, with the hook on screen in the first 2–3 seconds, and subtitles</li>
+        <li>Calm, premium pacing; a few projects shown in depth</li>
+        <li>Logo and the Neon Pulse sound at the end; licensed music only</li>
+        <li>2–3 hook versions per video</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Testing and control</h4>
+      <ul>
+        <li>3–5 new ad versions a week. Cut what doesn’t bring requests and move the budget to what does.</li>
+        <li>A stop-loss limit agreed with you</li>
+        <li>Everything is built paused. <b>Nothing spends until you say go</b>, on your own card.</li>
+        <li>Weekly report: spend, requests, cost per request, what changed. Plus a monthly summary.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">The budgets are a starting point for a test, to adjust with you. The first one or two weeks cost more per request while Meta learns; real numbers replace every estimate after that.</p>
+</section>
+
+<section>
+  <h2>Tracking and lead handling</h2>
+  <ul class="points">
+    <li>A pixel (“neon pixels - website”) and a Conversions API connection <b>already exist</b> in the business. First step: check they are installed and working on neonpixels.fr.</li>
+    <li>A <b>“Lead” event and a thank-you page</b> when the Diagnostic form is sent, so Meta can find more people like the ones who request.</li>
+    <li>A « Comment nous avez-vous connus ? » field (“How did you hear about us?”) on the form.</li>
+    <li>A simple lead sheet, and one named person who answers new requests quickly.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The first 30 days after unblocking</h2>
+  <div class="timeline">
+    <div class="step"><h4>Week 0 · Set-up</h4><ul><li>Card on the Neon Pixels ad account</li><li>Tracking checked</li><li>Ads built and paused</li><li>Your go</li></ul></div>
+    <div class="step"><h4>Weeks 1–2 · Learn</h4><ul><li>Launch at the test budget</li><li>Meta learns who requests</li><li>First real numbers</li></ul></div>
+    <div class="step"><h4>Weeks 3–4 · Improve</h4><ul><li>Keep the winners, cut the rest</li><li>Adjust the budget with you</li><li>First monthly report</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>What we need from you</h2>
+  <ul class="check">
+    <li><span>Ask Meta questions 1 and 2<small>Marco, from his profile</small></span></li>
+    <li><span>A payment card on the Neon Pixels ad account<small>Victor’s card; ad spend is separate from our work</small></span></li>
+    <li><span>The monthly budget for the 30-day test</span></li>
+    <li><span>Your average project value, and how many Diagnostics become clients<small>This tells us what a request is worth</small></span></li>
+    <li><span>Who answers new requests, and how fast</span></li>
+    <li><span>The tracking checks above<small>Marco</small></span></li>
+    <li><span>The previous agency’s access removed at handover</span></li>
+    <li><span>“Neon Pixels” named as beneficiary and payer on the ads<small>Required for ads shown in the EU</small></span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Questions for our call</h2>
+  <div class="qgroup">
+    <h4>The blocker</h4>
+    <ol class="qs">
+      <li>Have you asked Meta whether the Neon Pixels ad account can run ads while the older balances are open? What did they say?</li>
+      <li>Can another admin (Victor, or us) connect @neonpixels.fr to the business while your profile is limited?</li>
+      <li>Does “Business Account Not Allowed to Advertise” show on the Neon Pixels business in Account Quality, or only on your profile?</li>
+      <li>Are the restricted ad accounts personal, or owned by another business?</li>
+      <li>Meta mentioned an account it “restored”. Is that one of yours, and could it matter here?</li>
+    </ol>
+  </div>
+  <div class="qgroup">
+    <h4>Budget and business</h4>
+    <ol class="qs" start="6">
+      <li>What monthly ad budget are you comfortable with for a first 30-day test?</li>
+      <li>What is an average project worth, and how many Diagnostics become clients?</li>
+      <li>Which service should the ads push first: premium websites, redesigns, or custom apps and platforms?</li>
+      <li>Who answers new Diagnostic requests, and how quickly?</li>
+    </ol>
+  </div>
+  <div class="qgroup">
+    <h4>Tracking and access</h4>
+    <ol class="qs" start="10">
+      <li>Is the pixel installed on neonpixels.fr, and is the Conversions API sending events? Which platform is the site built on?</li>
+      <li>Can you add a Lead event, a thank-you page and the “How did you hear about us?” field to the Diagnostic form?</li>
+      <li>When should the previous agency’s access be removed?</li>
+      <li>Would you consider Google Ads as a backup while Meta is blocked?</li>
+    </ol>
+  </div>
+</section>
+
+<footer>Neon Pixels · Meta ads plan · 31 October 2026 · <a href="../next/">Next five posts</a> · <a href="../planning/">Launch schedule</a></footer>
+</div>
+</body>
+</html>
