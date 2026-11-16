@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Neon Pixels · Launch ad texts</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151719'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='30' font-weight='700' fill='%23C9B48A' text-anchor='middle'%3ENP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #F1EEE7; --surface: #E6E1D8; --fg: #151719; --muted: #55575A; --line: rgba(21,23,25,0.14);
+  --accent: #8C774F; --sage: #5F705E; --gold: #B89A62;
+  --display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 16px 80px; display: flex; flex-direction: column; gap: 72px; }
+@media (min-width: 700px) { .wrap { padding-inline: 24px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; text-wrap: balance; margin: 0; line-height: 0.95; }
+h1 { font-size: clamp(52px, 9vw, 96px); }
+h2 { font-size: clamp(36px, 5.5vw, 52px); }
+h3 { font-size: clamp(30px, 4.4vw, 40px); }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); max-width: 62ch; }
+header, section { display: flex; flex-direction: column; gap: 24px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+.chip b { font-weight: 600; color: var(--accent); }
+.note { font-size: 14px; color: var(--muted); }
+
+/* legend */
+.legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.legend div { background: var(--bg); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.legend b { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+.legend span { font-size: 14px; color: var(--muted); }
+@media (max-width: 760px) { .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* one ad */
+.ad { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 40px; border-top: 1px solid var(--line); }
+.ad > * { min-width: 0; }
+@media (max-width: 860px) { .ad { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+.ad-head { display: flex; flex-direction: column; gap: 10px; }
+.ad-num { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.shows { font-size: 15px; color: var(--muted); max-width: 60ch; }
+.fields { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+.field { display: flex; flex-direction: column; gap: 6px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.field:first-child { border-top: 1px solid var(--line); }
+.f-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.f-lab { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.tag { font-size: 11.5px; font-weight: 600; padding: 2px 9px; border-radius: 999px; line-height: 1.6; }
+.tag.new { background: var(--gold); color: #151719; }
+.tag.ok { border: 1px solid var(--sage); color: var(--sage); }
+.f-en { font-size: 15.5px; max-width: 62ch; }
+.f-en + .f-en { margin-top: 6px; }
+
+/* feed ad mock-up (indicative) */
+.mock-col { display: flex; flex-direction: column; gap: 10px; }
+.fb { background: #fff; color: #050505; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 44px rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.06); font-family: -apple-system, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif; }
+.fb-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px 8px; }
+.fb-av { width: 38px; height: 38px; flex: none; border-radius: 50%; background: #EFEBE4; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); display: grid; place-items: center; }
+.fb-name { font-weight: 600; font-size: 14.5px; line-height: 1.2; }
+.fb-sp { font-size: 12.5px; color: #65676B; }
+.fb-dots { margin-left: auto; color: #65676B; letter-spacing: 1px; font-size: 13px; }
+.fb-text { padding: 2px 14px 12px; font-size: 14px; line-height: 1.42; white-space: pre-line; }
+.media { position: relative; aspect-ratio: 4 / 5; container-type: inline-size; overflow: hidden; }
+.m-in { position: absolute; inset: 0; padding: 8cqw 8cqw 7cqw; display: flex; flex-direction: column; gap: 4cqw; }
+.m-dark { background: #1C1D1F; color: #F1EEE7; }
+.m-sage { background: #A9B5A6; color: #1C1D1F; }
+.m-light { background: #EFEBE4; color: #1C1D1F; }
+.m-lab { display: flex; justify-content: space-between; font: 600 2.7cqw/1.2 var(--body); letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.8; }
+.m-h { font: 400 12.5cqw/0.95 var(--display); letter-spacing: 0.005em; margin-top: 4cqw; }
+.m-h em { font-style: normal; color: var(--gold); }
+.m-light .m-h em, .m-sage .m-h em { color: #8C774F; }
+.m-quote { font: 500 4.6cqw/1.32 var(--body); margin-top: 2cqw; }
+.m-auth { font: 600 2.9cqw var(--body); letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; }
+.m-score { display: flex; align-items: baseline; gap: 3cqw; margin-top: auto; }
+.m-score b { font: 400 13cqw/1 var(--display); }
+.m-score span { font: 500 3cqw/1.3 var(--body); }
+.m-foot { margin-top: auto; font: 600 2.7cqw var(--body); letter-spacing: 0.16em; }
+.m-play { position: absolute; right: 6cqw; top: 6cqw; width: 9cqw; height: 9cqw; border-radius: 50%; background: rgba(241,238,231,0.92); display: grid; place-items: center; }
+.m-play::after { content: ""; border-left: 2.6cqw solid #151719; border-top: 1.6cqw solid transparent; border-bottom: 1.6cqw solid transparent; margin-left: 0.6cqw; }
+.carousel { display: flex; gap: 6px; padding: 0 0 0 0; overflow: hidden; background: #fff; }
+.carousel .media { flex: 0 0 82%; }
+.carousel .media.peek { flex: 0 0 82%; }
+.fb-foot { display: flex; align-items: center; gap: 12px; padding: 10px 14px 12px; background: #F0F2F5; }
+.fb-foot div { min-width: 0; flex: 1; }
+.fb-dom { font-size: 11.5px; color: #65676B; text-transform: uppercase; letter-spacing: 0.02em; }
+.fb-title { font-weight: 600; font-size: 15px; line-height: 1.25; }
+.fb-btn { flex: none; background: #E2E5E9; border-radius: 7px; padding: 8px 12px; font-weight: 600; font-size: 14px; white-space: nowrap; }
+.c-feet { display: flex; gap: 6px; }
+.c-feet .fb-foot { flex: 0 0 82%; }
+
+/* question + reply */
+.box { border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: var(--surface); }
+.box p { max-width: 70ch; }
+.fr { font-style: italic; }
+ol.steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; max-width: 66ch; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Neon Pixels · Meta ads · Pilot</div>
+  <h1>The 4 launch ads</h1>
+  <p class="lead">Here are the texts for the first four ads, in French as they will run, with the English meaning next to each line. Most lines come from posts you have already approved. The new lines are marked <b>New</b>.</p>
+  <p class="lead">Tell us what you would like changed. Once you OK the texts, we finish the visuals and send them to you before anything goes live.</p>
+  <div class="chips">
+    <span class="chip"><b>Where</b> Paris + Île-de-France</span>
+    <span class="chip"><b>Budget</b> €30 a day</span>
+    <span class="chip"><b>Every ad opens</b> neonpixels.fr/demande</span>
+    <span class="chip"><b>Goal</b> Diagnostic Neon requests</span>
+  </div>
+</header>
+
+<section>
+  <h2>How each ad reads</h2>
+  <div class="legend">
+    <div><b>On screen</b><span>The line on the visual, readable in the first seconds, even with the sound off.</span></div>
+    <div><b>Text</b><span>Above the visual. About two lines show before « … plus » (“… more”).</span></div>
+    <div><b>Title</b><span>The bold line under the visual, next to the button.</span></div>
+    <div><b>Button</b><span>« En savoir plus » (“Learn more”), one of Meta’s standard buttons. It opens your Diagnostic page.</span></div>
+  </div>
+  <p class="note">The previews show the texts in place. The visuals in them are indicative; the final visuals come to you after your OK.</p>
+</section>
+
+<!-- AD 1 -->
+<article class="ad">
+  <div class="mock-col">
+    <div class="fb">
+      <div class="fb-head"><div class="fb-av"><svg width="22" height="22" viewBox="0 0 40 40" fill="none" stroke="#151719" stroke-width="2.4"><path d="M6 34V6l14 28V6"/><path d="M20 6h8a7 7 0 0 1 0 14h-8"/></svg></div><div><div class="fb-name">Neon Pixels</div><div class="fb-sp">Sponsorisé</div></div><div class="fb-dots">•••</div></div>
+      <div class="fb-text">Pour Neova Space, nous avons conçu un parcours digital structuré autour de trois étapes&nbsp;: trouver, transformer et gérer son bien immobilier. Une direction artistique épurée qui sublime les réalisations, en français et en anglais, pour rassurer des acquéreurs qui ne vivent pas toujours à Paris.
+
+Échangeons sur votre projet lors d’un premier diagnostic offert.</div>
+      <div class="media m-dark"><div class="m-in">
+        <div class="m-lab"><span>Neova Space · Paris</span></div>
+        <div class="m-h">Votre expertise mérite une expérience digitale <em>à sa hauteur.</em></div>
+        <div class="m-foot">NEON PIXELS® PARIS</div>
+      </div><div class="m-play"></div></div>
+      <div class="fb-foot"><div><div class="fb-dom">neonpixels.fr</div><div class="fb-title">Diagnostic offert · Réponse sous 24&nbsp;h</div></div><span class="fb-btn">En savoir plus</span></div>
+    </div>
+  </div>
+  <div class="ad-head">
+    <div class="ad-num">Ad 1 · Video</div>
+    <h3>Neova Space</h3>
+    <p class="shows">The Neova Space site in motion: the home page, the three steps and the mobile version. Vertical and 4:5 versions.</p>
+    <div class="fields">
+      <div class="field">
+        <div class="f-top"><span class="f-lab">On screen</span><span class="tag new">New</span></div>
+        <p class="f-en">“Your expertise deserves a digital experience that lives up to it.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Text</span><span class="tag ok">From post 16 + your diagnostic line</span></div>
+        <p class="f-en">“For Neova Space, we designed a structured digital journey around three steps: finding, transforming and managing a property. A refined art direction that showcases the projects, in French and English, to reassure buyers who don’t always live in Paris.”</p>
+        <p class="f-en">“Let’s discuss your project in a first, complimentary diagnostic.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Title</span><span class="tag new">New</span></div>
+        <p class="f-en">“Complimentary diagnostic · Reply within 24 h”</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- AD 2 -->
+<article class="ad">
+  <div class="mock-col">
+    <div class="fb">
+      <div class="fb-head"><div class="fb-av"><svg width="22" height="22" viewBox="0 0 40 40" fill="none" stroke="#151719" stroke-width="2.4"><path d="M6 34V6l14 28V6"/><path d="M20 6h8a7 7 0 0 1 0 14h-8"/></svg></div><div><div class="fb-name">Neon Pixels</div><div class="fb-sp">Sponsorisé</div></div><div class="fb-dots">•••</div></div>
+      <div class="fb-text">«&nbsp;Très professionnelle et à l'écoute de son client, comprend les attentes avec un très bon suivi. Je recommande, merci pour votre professionnalisme.&nbsp;» Nasser&nbsp;B., avis Google.
+
+Chaque projet est mené avec la même exigence&nbsp;: une expérience digitale soignée et un accompagnement attentif, de la première réflexion jusqu’à la mise en ligne.
+
+Échangeons sur votre projet lors d’un premier diagnostic offert.</div>
+      <div class="media m-sage"><div class="m-in">
+        <div class="m-lab"><span>Preuves · Avis Google</span></div>
+        <div class="m-h">Votre confiance, notre plus belle <em>réussite.</em></div>
+        <div class="m-quote">«&nbsp;Très professionnelle et à l'écoute de son client, comprend les attentes avec un très bon suivi. Je recommande, merci pour votre professionnalisme.&nbsp;»</div>
+        <div class="m-auth">Nasser B. · Avis Google</div>
+        <div class="m-score"><b>5,0</b><span>sur Google</span></div>
+      </div></div>
+      <div class="fb-foot"><div><div class="fb-dom">neonpixels.fr</div><div class="fb-title">5,0 sur Google · Diagnostic offert</div></div><span class="fb-btn">En savoir plus</span></div>
+    </div>
+  </div>
+  <div class="ad-head">
+    <div class="ad-num">Ad 2 · Image</div>
+    <h3>Google review, Nasser B.</h3>
+    <p class="shows">One 4:5 image in the style of your review posts: the headline, Nasser B.’s review quoted exactly as on Google, and your 5.0 score.</p>
+    <div class="fields">
+      <div class="field">
+        <div class="f-top"><span class="f-lab">On the image</span><span class="tag ok">From your review posts</span></div>
+        <p class="f-en">“Your trust, our greatest achievement.”</p>
+        <p class="f-en">Nasser B.’s review, exactly as on Google (validated on 28 October): “Very professional and attentive to the client, understands expectations, with very good follow-up. I recommend, thank you for your professionalism.” · Nasser B. · Google review · 5.0 on Google</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Text</span><span class="tag ok">From post 17 + your diagnostic line</span></div>
+        <p class="f-en">The same review, then: “Every project is run with the same high standards: a carefully crafted digital experience and attentive support, from the first idea to launch.”</p>
+        <p class="f-en">“Let’s discuss your project in a first, complimentary diagnostic.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Title</span><span class="tag new">New</span></div>
+        <p class="f-en">“5.0 on Google · Complimentary diagnostic”</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- AD 3 -->
+<article class="ad">
+  <div class="mock-col">
+    <div class="fb">
+      <div class="fb-head"><div class="fb-av"><svg width="22" height="22" viewBox="0 0 40 40" fill="none" stroke="#151719" stroke-width="2.4"><path d="M6 34V6l14 28V6"/><path d="M20 6h8a7 7 0 0 1 0 14h-8"/></svg></div><div><div class="fb-name">Neon Pixels</div><div class="fb-sp">Sponsorisé</div></div><div class="fb-dots">•••</div></div>
+      <div class="fb-text">Avant de lancer votre projet, prenons le temps de le comprendre.
+
+Le Diagnostic Neon est une première consultation, pensée pour poser les bases de votre projet. Nous étudions d’abord votre demande, avec une première réponse sous 24&nbsp;h. Nous échangeons ensuite 30&nbsp;minutes en visio sur vos objectifs et vos priorités, puis vous recevez par écrit nos recommandations et nos orientations stratégiques.
+
+Le diagnostic est offert après étude de votre demande.</div>
+      <div class="carousel">
+        <div class="media m-dark"><div class="m-in">
+          <div class="m-lab"><span>Méthode · Diagnostic Neon</span><span>1/6</span></div>
+          <div class="m-h">Avant de lancer votre projet, prenons le temps de le <em>comprendre.</em></div>
+          <div class="m-foot">NEON PIXELS® PARIS</div>
+        </div></div>
+        <div class="media m-light peek"><div class="m-in">
+          <div class="m-lab"><span>Étape 01</span><span>2/6</span></div>
+          <div class="m-h">Nous étudions votre <em>demande.</em></div>
+        </div></div>
+      </div>
+      <div class="c-feet">
+        <div class="fb-foot"><div><div class="fb-dom">neonpixels.fr</div><div class="fb-title">Le Diagnostic Neon, offert</div></div><span class="fb-btn">En savoir plus</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ad-head">
+    <div class="ad-num">Ad 3 · Carousel</div>
+    <h3>The Diagnostic Neon</h3>
+    <p class="shows">A carousel in the style of post 18: the Diagnostic Neon step by step, from your request to the written recommendations.</p>
+    <div class="fields">
+      <div class="field">
+        <div class="f-top"><span class="f-lab">First card</span><span class="tag ok">From post 18</span></div>
+        <p class="f-en">“Before launching your project, let’s take the time to understand it.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Text</span><span class="tag ok">From post 18</span></div>
+        <p class="f-en">“The Diagnostic Neon is a first consultation, designed to lay the foundations of your project. We first study your request, with a first reply within 24 h. Then we talk for 30 minutes by video about your goals and priorities, and you receive our recommendations and strategic direction in writing.”</p>
+        <p class="f-en">“The diagnostic is complimentary once we have reviewed your request.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Title</span><span class="tag new">New</span></div>
+        <p class="f-en">“The Diagnostic Neon, complimentary”</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- AD 4 -->
+<article class="ad">
+  <div class="mock-col">
+    <div class="fb">
+      <div class="fb-head"><div class="fb-av"><svg width="22" height="22" viewBox="0 0 40 40" fill="none" stroke="#151719" stroke-width="2.4"><path d="M6 34V6l14 28V6"/><path d="M20 6h8a7 7 0 0 1 0 14h-8"/></svg></div><div><div class="fb-name">Neon Pixels</div><div class="fb-sp">Sponsorisé</div></div><div class="fb-dots">•••</div></div>
+      <div class="fb-text">Avant de fonder Neon Pixels à Paris en 2024, Marco Bertoli a été Lead Tech chez Hitachi de 2016 à 2024. Un accompagnement direct&nbsp;: Marco reste votre interlocuteur principal, de la première conversation à la mise en ligne, entouré de spécialistes en UX/UI, animation, 3D et contenu.
+
+Échangeons sur votre projet lors d’un premier diagnostic offert.</div>
+      <div class="media m-dark"><div class="m-in">
+        <div class="m-lab"><span>Studio · Neon Pixels</span></div>
+        <div class="m-h">Derrière chaque projet, une <em>vision.</em></div>
+        <div class="m-foot">NEON PIXELS® PARIS</div>
+      </div><div class="m-play"></div></div>
+      <div class="fb-foot"><div><div class="fb-dom">neonpixels.fr</div><div class="fb-title">Un accompagnement direct · Diagnostic offert</div></div><span class="fb-btn">En savoir plus</span></div>
+    </div>
+  </div>
+  <div class="ad-head">
+    <div class="ad-num">Ad 4 · Video</div>
+    <h3>Marco, founder</h3>
+    <p class="shows">Opens on the line, shows Marco once and briefly, then goes straight to the studio’s projects, as you asked for the reels.</p>
+    <div class="fields">
+      <div class="field">
+        <div class="f-top"><span class="f-lab">On screen</span><span class="tag ok">From reel 03</span></div>
+        <p class="f-en">“Behind every project, a vision.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Text</span><span class="tag ok">Facts from your corrections</span><span class="tag new">New wording</span></div>
+        <p class="f-en">“Before founding Neon Pixels in Paris in 2024, Marco Bertoli was Lead Tech at Hitachi from 2016 to 2024. Direct support: Marco remains your main contact, from the first conversation to launch, working with specialists in UX/UI, animation, 3D and content.”</p>
+        <p class="f-en">“Let’s discuss your project in a first, complimentary diagnostic.”</p>
+      </div>
+      <div class="field">
+        <div class="f-top"><span class="f-lab">Title</span><span class="tag new">New</span></div>
+        <p class="f-en">“Direct support · Complimentary diagnostic”</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section>
+  <h2>One thing to align before launch</h2>
+  <div class="box">
+    <p><b>The reply time.</b> The ads say <span class="fr">« première réponse sous 24&nbsp;h »</span> (“first reply within 24 h”), your words from post 18, and your home page says <span class="fr">« Réponse sous 24 heures »</span>.</p>
+    <p>The Diagnostic page the ads open, and its thank-you screen, still say <span class="fr">« premier retour sous trois jours ouvrés »</span> (“first reply within three working days”).</p>
+    <p>Could your team change the Diagnostic page to 24 h, so the ad and the page say the same thing? Someone who clicks an ad expects the page to keep the same promise, and a same-day reply is what turns a request into a call.</p>
+  </div>
+</section>
+
+<section>
+  <h2>How to reply</h2>
+  <ol class="steps">
+    <li>Reply <b>OK</b> in the WhatsApp group if the four texts are good to go.</li>
+    <li>For a change, send the ad number and your wording, for example: <span class="fr">Ad 2, title: …</span>. We apply your words exactly.</li>
+    <li>After your OK, the visuals come to you for a last look. Nothing goes live without your go.</li>
+  </ol>
+</section>
+
+<footer>Neon Pixels · Meta ads pilot · Launch ad texts · 16 November 2026</footer>
+
+</div>
+</body>
+</html>
