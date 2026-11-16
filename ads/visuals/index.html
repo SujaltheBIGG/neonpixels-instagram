@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Neon Pixels · Launch ad visuals</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151719'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='30' font-weight='700' fill='%23C9B48A' text-anchor='middle'%3ENP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #F1EEE7; --surface: #E6E1D8; --fg: #151719; --muted: #55575A; --line: rgba(21,23,25,0.14);
+  --accent: #8C774F; --sage: #5F705E; --gold: #B89A62;
+  --display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #151719; --surface: #1F2123; --fg: #F1EEE7; --muted: #B5AFA5; --line: rgba(241,238,231,0.14); --accent: #C9B48A; --sage: #9EAD9D; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 16px 80px; display: flex; flex-direction: column; gap: 72px; }
+.wrap > * { min-width: 0; }
+@media (min-width: 700px) { .wrap { padding-inline: 24px; } }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; text-wrap: balance; margin: 0; line-height: 0.95; }
+h1 { font-size: clamp(52px, 9vw, 96px); }
+h2 { font-size: clamp(36px, 5.5vw, 52px); }
+h3 { font-size: clamp(30px, 4.4vw, 40px); }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); max-width: 62ch; }
+header, section { display: flex; flex-direction: column; gap: 24px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+.chip b { font-weight: 600; color: var(--accent); }
+.note { font-size: 14px; color: var(--muted); }
+.fr { font-style: italic; }
+
+/* one ad */
+.ad { display: flex; flex-direction: column; gap: 28px; padding-top: 40px; border-top: 1px solid var(--line); min-width: 0; }
+.ad-head { display: flex; flex-direction: column; gap: 10px; }
+.ad-num { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.shows { font-size: 15.5px; color: var(--muted); max-width: 64ch; }
+.flag { font-size: 14.5px; max-width: 64ch; padding: 12px 16px; border-left: 3px solid var(--gold); background: var(--surface); border-radius: 0 10px 10px 0; }
+
+/* formats strip: side by side on a laptop, swipe on a phone */
+.strip { display: flex; gap: 20px; align-items: flex-end; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.strip figure { flex: none; margin: 0; display: flex; flex-direction: column; gap: 10px; scroll-snap-align: start; }
+.strip .r916 { width: min(290px, 70vw); }
+.strip .r45 { width: min(380px, 80vw); }
+.strip .r11 { width: min(300px, 74vw); }
+.strip video, .strip img { display: block; width: 100%; height: auto; border-radius: 12px; background: #151719; box-shadow: 0 14px 36px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06); }
+.r916 video, .r916 img { aspect-ratio: 9 / 16; }
+.r45 video, .r45 img { aspect-ratio: 4 / 5; }
+.r11 img { aspect-ratio: 1 / 1; }
+figcaption { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--muted); }
+figcaption b { font-weight: 600; color: var(--fg); }
+.swipe { font-size: 13px; color: var(--muted); }
+@media (min-width: 900px) { .swipe.phone { display: none; } }
+
+/* asks */
+.box { border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: var(--surface); }
+.box p { max-width: 70ch; }
+ol.steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; max-width: 66ch; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 24px; display: flex; flex-direction: column; gap: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Neon Pixels · Meta ads · Pilot</div>
+  <h1>The 4 launch ads, final visuals</h1>
+  <p class="lead">Thank you for the OK on the texts. Here are the final visuals, built with your approved words, for a last look before launch. Tap a video to play it with sound.</p>
+  <p class="lead">Each ad comes in the sizes Meta needs: vertical for Stories and Reels, and 4:5 for the Feed. Nothing goes live without your go.</p>
+  <div class="chips">
+    <span class="chip"><b>Where</b> Paris + Île-de-France</span>
+    <span class="chip"><b>Budget</b> €30 a day</span>
+    <span class="chip"><b>Every ad opens</b> neonpixels.fr/demande</span>
+    <span class="chip"><b>Texts</b> <a href="../texts/">see the approved texts</a></span>
+  </div>
+</header>
+
+<!-- AD 1 -->
+<article class="ad">
+  <div class="ad-head">
+    <div class="ad-num">Ad 1 · Video · 15 s</div>
+    <h3>BMC Development</h3>
+    <p class="shows">The BMC site in motion, as Marco suggested: full-screen residences and slow transitions, on mobile then desktop. It opens on the approved line <span class="fr">« Votre expertise mérite une expérience digitale à sa hauteur. »</span> (“Your expertise deserves a digital experience that lives up to it.”) and uses the captions from your BMC reel.</p>
+    <p class="flag">The text above this ad changed with the switch to BMC (it now comes from your BMC post 01). You can read it under Ad 1 on the <a href="../texts/">texts page</a>. Your OK covers it too.</p>
+  </div>
+  <div class="strip">
+    <figure class="r916">
+      <video controls playsinline preload="metadata" poster="media/ad1-9x16-poster.jpg"><source src="media/ad1-9x16.mp4" type="video/mp4"></video>
+      <figcaption><b>Stories + Reels</b><span>9:16</span></figcaption>
+    </figure>
+    <figure class="r45">
+      <video controls playsinline preload="metadata" poster="media/ad1-4x5-poster.jpg"><source src="media/ad1-4x5.mp4" type="video/mp4"></video>
+      <figcaption><b>Feed</b><span>4:5</span></figcaption>
+    </figure>
+  </div>
+  <p class="swipe phone">Swipe sideways to see the Feed version →</p>
+</article>
+
+<!-- AD 2 -->
+<article class="ad">
+  <div class="ad-head">
+    <div class="ad-num">Ad 2 · Image</div>
+    <h3>Google review, Nasser B.</h3>
+    <p class="shows">In the style of your review posts: the headline <span class="fr">« Votre confiance, notre plus belle réussite. »</span> (“Your trust, our greatest achievement.”), Nasser B.’s review exactly as on Google, and your 5.0 score.</p>
+  </div>
+  <div class="strip">
+    <figure class="r916">
+      <img src="media/ad2-9x16.jpg" alt="Ad 2, vertical version: Nasser B.'s Google review and the 5.0 score" loading="lazy">
+      <figcaption><b>Stories + Reels</b><span>9:16</span></figcaption>
+    </figure>
+    <figure class="r45">
+      <img src="media/ad2-4x5.jpg" alt="Ad 2, Feed version: Nasser B.'s Google review and the 5.0 score" loading="lazy">
+      <figcaption><b>Feed</b><span>4:5</span></figcaption>
+    </figure>
+  </div>
+  <p class="swipe phone">Swipe sideways to see the Feed version →</p>
+</article>
+
+<!-- AD 3 -->
+<article class="ad">
+  <div class="ad-head">
+    <div class="ad-num">Ad 3 · Carousel · 6 cards</div>
+    <h3>The Diagnostic Neon</h3>
+    <p class="shows">Your post 18, step by step, from the request to the written recommendations. The first card opens on <span class="fr">« Avant de lancer votre projet, prenons le temps de le comprendre. »</span> (“Before launching your project, let’s take the time to understand it.”). The last card leaves out <span class="fr">« Lien en bio »</span> (“Link in bio”), because the ad has its own button.</p>
+  </div>
+  <div class="strip">
+    <figure class="r11"><img src="media/ad3-card1.jpg" alt="Ad 3, card 1 of 6" loading="lazy"><figcaption><b>Card 1</b><span>1:1</span></figcaption></figure>
+    <figure class="r11"><img src="media/ad3-card2.jpg" alt="Ad 3, card 2 of 6" loading="lazy"><figcaption><b>Card 2</b><span>1:1</span></figcaption></figure>
+    <figure class="r11"><img src="media/ad3-card3.jpg" alt="Ad 3, card 3 of 6" loading="lazy"><figcaption><b>Card 3</b><span>1:1</span></figcaption></figure>
+    <figure class="r11"><img src="media/ad3-card4.jpg" alt="Ad 3, card 4 of 6" loading="lazy"><figcaption><b>Card 4</b><span>1:1</span></figcaption></figure>
+    <figure class="r11"><img src="media/ad3-card5.jpg" alt="Ad 3, card 5 of 6" loading="lazy"><figcaption><b>Card 5</b><span>1:1</span></figcaption></figure>
+    <figure class="r11"><img src="media/ad3-card6.jpg" alt="Ad 3, card 6 of 6" loading="lazy"><figcaption><b>Card 6</b><span>1:1</span></figcaption></figure>
+  </div>
+  <p class="swipe">Swipe sideways to see all six cards →</p>
+</article>
+
+<!-- AD 4 -->
+<article class="ad">
+  <div class="ad-head">
+    <div class="ad-num">Ad 4 · Video · 15 s</div>
+    <h3>Marco, founder</h3>
+    <p class="shows">Opens on the line from reel 03, <span class="fr">« Derrière chaque projet, une vision. »</span> (“Behind every project, a vision.”), shows Marco once and briefly, then goes straight to the studio’s client projects: Neova, Vision d’Avenir and BMC.</p>
+  </div>
+  <div class="strip">
+    <figure class="r916">
+      <video controls playsinline preload="metadata" poster="media/ad4-9x16-poster.jpg"><source src="media/ad4-9x16.mp4" type="video/mp4"></video>
+      <figcaption><b>Stories + Reels</b><span>9:16</span></figcaption>
+    </figure>
+    <figure class="r45">
+      <video controls playsinline preload="metadata" poster="media/ad4-4x5-poster.jpg"><source src="media/ad4-4x5.mp4" type="video/mp4"></video>
+      <figcaption><b>Feed</b><span>4:5</span></figcaption>
+    </figure>
+  </div>
+  <p class="swipe phone">Swipe sideways to see the Feed version →</p>
+</article>
+
+<section>
+  <h2>Before we go live</h2>
+  <div class="box">
+    <p><b>1. The reply time.</b> The ads promise <span class="fr">« première réponse sous 24&nbsp;h »</span> (“first reply within 24 h”). The Diagnostic page the ads open still says <span class="fr">« premier retour sous trois jours ouvrés »</span> (“first reply within three working days”), and so does its thank-you screen. Could your team change it to 24 h, so the ad and the page make the same promise?</p>
+    <p><b>2. One test request.</b> Right after launch, we would like to send one request through the Diagnostic page, marked TEST, to check that it reaches your Leads list. Please tell us if that is fine.</p>
+  </div>
+</section>
+
+<section>
+  <h2>How to reply</h2>
+  <ol class="steps">
+    <li>Reply <b>OK</b> in the WhatsApp group if the four ads are good to go.</li>
+    <li>For a change, send the ad number and what you would like changed, for example: <span class="fr">Ad 4, Feed version: …</span></li>
+    <li>After your OK, we launch the pilot and share the first results with you.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>Neon Pixels · Meta ads pilot · Final visuals · 16 November 2026</span>
+  <span>The videos on this page are lightly compressed so they load fast on a phone. Meta receives the full-quality files.</span>
+</footer>
+
+</div>
+</body>
+</html>
